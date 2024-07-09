@@ -1,8 +1,8 @@
-import Insights from "@/components/Importer/Insights_tabs";
-import Tabs_Desc from "@/components/Importer/Tabs_Descriptions";
-import Video from "@/components/Importer/Video_Importer";
+import Insights from "@/components/importer/Insights_tabs";
+import Tabs_Desc from "@/components/importer/Tabs_Descriptions";
+import Video from "@/components/importer/Video_Importer";
 
-export default function aboutUs(){
+export default function Importer(){
     return(
         <div>
             This is the Importer Page
@@ -15,7 +15,7 @@ export default function aboutUs(){
                     Industry-Driven Insights For Up-To-Date Information
                 </h1>
             </div>
-            {/* <Insights /> */}
+            <Insights />
         </div>
     );
 

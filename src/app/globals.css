@@ -79,3 +79,21 @@
   .group-hover .group-hover-content {
     display: block !important;
   }
+
+
+  .embla {
+    overflow: hidden;
+  }
+  
+  .embla__container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .embla__slide {
+    position: relative;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+  
