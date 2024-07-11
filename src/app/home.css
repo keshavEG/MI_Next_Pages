@@ -1,0 +1,283 @@
+.home-header {
+    margin-top: 50px;
+}
+
+.heading-right {
+    margin-left: 10%;
+}
+
+.second-img {
+    display: none;
+}
+
+.get-access {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.market {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #F8992F;
+}
+
+/* .header-para-div */
+.heading-para {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.video-div {
+    margin: 10%;
+}
+
+.schedule-second-img {
+    display: none;
+}
+
+.customers-div {
+    padding-inline: 20vw;
+    padding-block: 5vh;
+}
+
+.builder-color {
+    color: #A0A0A0;
+}
+
+.text-builder {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.importexport-div {
+    padding-inline: 10vw;
+    padding-block: 10vh;
+}
+
+.importExportBtn {
+    text-align: left;
+}
+
+.importexportbuttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 200px;
+
+}
+
+.importExportDataDiv {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.mapDiv {
+    margin-left: 100px;
+}
+
+.importexportbuttons button {
+    margin-top: 10px;
+    cursor: pointer;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.importexportbuttons button.active {
+    color: #FB923C;
+}
+
+.services-div {
+    padding-block: 10vh;
+    padding-inline: 10vw;
+}
+
+.services-heading {
+    text-transform: uppercase;
+}
+
+.services-para-div {
+    margin-top: 10vh;
+}
+
+.services-img {
+    margin-left: 5vw;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #f8f8f8; */
+    padding: 10px 0;
+    /* border-bottom: 2px solid #ccc; */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-bottom: 2px solid #fb923c;
+}
+
+@media (max-width: 600px) {
+    .heading-text-div {
+        width: 80vw;
+    }
+
+    .get-access {
+        font-size: 30px;
+    }
+
+    .market-intelligence {
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    .first-img {
+        display: none;
+    }
+
+    .second-img {
+        display: flex;
+        margin-block: 20px;
+        width: 80vw;
+    }
+
+    .schedule-first-img {
+        display: none;
+    }
+
+    .schedule-second-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        margin-left: 25vw;
+        width: 80px;
+    }
+
+    .schedule-heading-text {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        padding: 10px 0;
+    }
+
+    .builder-color {
+        width: 60vw;
+    }
+
+    .customers-worldwide {
+        font-size: 20px;
+    }
+
+    .customer-img-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.product-child-inner-div {
+    display: none;
+}
+.service-subheading {
+    text-transform: uppercase;
+    color: #FB923C;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.service-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.service-nav a {
+    padding-inline: 20px;
+    padding-block: 10px;
+    margin-block: 5px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    width: 100px;
+}
+
+.service-nav a:hover,
+.service-nav a.active {
+    /* text-decoration: underline #F8992F; */
+    border-bottom: 3px solid #fb923c;
+}
+
+.product-first-col {
+    border: 1px solid #c0c0c0;
+    border-radius: 20px;
+}
+
+.product-second-col {
+    border: 1px solid #c0c0c0;
+    border-radius: 20px;
+    margin-left: 40px;
+}
+
+.product-row {
+    height: 50vh;
+}
+
+.product-second-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 30px;
+}
+
+
+.product-second-heading h3 {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    font-weight: 400;
+}
+
+.product-inner-nav {
+    font-display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.product-inner-nav a {
+    margin-right: 20px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.product-inner-nav a:hover,
+.product-inner-nav a.active {
+    border: 1px solid #fb923c;
+}
+
+.product-inner-div {
+    padding-inline: 20px;
+    margin-top: 40px;
+}

@@ -5,7 +5,6 @@ import Video from "@/components/importer/Video_Importer";
 export default function Importer(){
     return(
         <div>
-            This is the Importer Page
             <Video />
             <Tabs_Desc />
             <br></br>
