@@ -51,7 +51,9 @@ export default function Tabs_Desc() {
           </button>
         ))}
       </div>
-      <TabContent {...tabData[activeTab]} />
+      <div className="mt-8">
+        <TabContent {...tabData[activeTab]} />
+      </div>
     </div>
   );
 }
