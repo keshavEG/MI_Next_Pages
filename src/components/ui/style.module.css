@@ -14,4 +14,10 @@
   .custom-button:hover {
     background-color: #7e7e7e; /* Optional: Changes background color on hover */
   }
-  
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust the gap value as needed */
+}

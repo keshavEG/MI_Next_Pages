@@ -1,88 +1,78 @@
-import React from 'react'
+"use client"
+
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
 function Slider() {
-    return (
-        <div>
-            <div className="flex justify-center items-center px-16 py-16 text-lg font-semibold leading-5 text-black bg-neutral-50 max-md:px-5">
-                <div className="flex gap-5 justify-between px-2 max-md:flex-wrap">
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4d5d186849f46d3ab57ec11f43fed5db2e0a724c59dbc5aa81a57d6f7923dd22?"
-                        className="shrink-0 my-auto border-solid border-stone-300 stroke-[3px] stroke-stone-300 w-[45px]"
+  const carouselItems = [
+    { icon: "/shipicon.png", title: "2B +", subtitle: "Shipments Count" },
+    { icon: "/globeicon.png", title: "3M Total", subtitle: "Exporter Importer" },
+    { icon: "/mapicon.png", title: "+195", subtitle: "Countries Trade Data" },
+    { icon: "/trade_data.png", title: "Global", subtitle: "Trade Data" },
+    { icon: "/historical_data.png", title: "5Y+", subtitle: "Historical Data" },
+    { icon: "/trade_document_icon.png", title: "100M+", subtitle: "Trade Documents" },
+    { icon: "/update_icon.png", title: "Real-time", subtitle: "Updates" },
+    { icon: "/ai_icon.jpg", title: "AI-Powered", subtitle: "Analytics" },
+  ];
+
+  return (
+    <div className="relative w-full py-8">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+        className="w-full max-w-[1000px] mx-auto"
+      >
+        <CarouselContent className="-ml-6">
+          {carouselItems.map((item, index) => (
+            <CarouselItem key={index} className="pl-6 basis-1/4">
+              <div className="p-1">
+                <Card className="border border-gray-200 rounded-xl shadow-md">
+                  <CardContent className="flex flex-col items-center justify-center p-6 h-[160px]">
+                    <Image
+                      loading="lazy"
+                      src={item.icon}
+                      width={64}
+                      height={64}
+                      alt=""
+                      className="mb-4"
                     />
-                    <div className="flex gap-5 justify-between py-5 pr-3.5 pl-5 bg-white rounded-xl shadow-sm">
-                        <Image
-                            loading="lazy"
-                            src="/shipicon.png"
-                            width={200}
-                            height={200}
-                            alt=""
-                            className="shrink-0 aspect-[0.97] w-[60px]"
-                        />
-                        <div className="my-auto">
-                            2B +<br />
-                            Shipments
-                            <br />
-                            Count{" "}
-                        </div>
+                    <div className="text-center text-sm font-semibold">
+                      {item.title}<br />
+                      {item.subtitle.split(' ').map((word, i) => (
+                        <React.Fragment key={i}>
+                          {word}
+                          <br />
+                        </React.Fragment>
+                      ))}
                     </div>
-                    <div className="flex gap-2.5 justify-between px-8 py-5 bg-white rounded-xl shadow-sm max-md:px-5">
-                        <Image
-                            loading="lazy"
-                            src="/globeicon.png"
-                            width={200}
-                            height={200}
-                            alt=""
-                            className="shrink-0 aspect-square w-[62px]"
-                        />
-                        <div>
-                            3M Total
-                            <br />
-                            Exporter <br />
-                            Importer
-                        </div>
-                    </div>
-                    <div className="flex gap-2 justify-between px-5 py-5 bg-white rounded-xl shadow-sm">
-                        <Image
-                            loading="lazy"
-                            src="/mapicon.png"
-                            width={200}
-                            height={200}
-                            alt=""
-                            className="shrink-0 aspect-[1.49] w-[86px]"
-                        />
-                        <div>
-                            +195
-                            <br />
-                            Countries <br />
-                            Trade Data
-                        </div>
-                    </div>
-                    <div className="flex gap-0 justify-between py-2.5 pr-5 pl-2.5 bg-white rounded-xl shadow-sm">
-                        <Image
-                            loading="lazy"
-                            src="/globeicon2.png"
-                            width={200}
-                            height={200}
-                            alt=""
-                            className="shrink-0 max-w-full aspect-[1.28] w-[86px]"
-                        />
-                        <div className="mt-5">
-                            Global <br />
-                            Trade Data
-                        </div>
-                    </div>
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d4b9e613d850f39caebe49955d10503d4475bbd50f1cfef70c11dc57c2e7bc61?"
-                        className="shrink-0 my-auto border-solid border-stone-300 stroke-[3px] stroke-stone-300 w-[45px]"
-                    />
-                </div>
-            </div>
-        </div>
-    )
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute -left-12 top-1/2 transform -translate-y-1/2" />
+        <CarouselNext className="absolute -right-12 top-1/2 transform -translate-y-1/2" />
+      </Carousel>
+    </div>
+  );
 }
 
-export default Slider
+export default Slider;

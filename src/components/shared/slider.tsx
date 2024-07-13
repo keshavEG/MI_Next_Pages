@@ -1,73 +1,78 @@
-// import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+"use client"
 
-function ResponsiveSlider() {
-    const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
-    return (
-        <div className="slider-container">
-            <Slider {...settings}>
-                <div>
-                    <h3>1</h3>
-                </div>
-                <div>
-                    <h3>2</h3>
-                </div>
-                <div>
-                    <h3>3</h3>
-                </div>
-                <div>
-                    <h3>4</h3>
-                </div>
-                <div>
-                    <h3>5</h3>
-                </div>
-                <div>
-                    <h3>6</h3>
-                </div>
-                <div>
-                    <h3>7</h3>
-                </div>
-                <div>
-                    <h3>8</h3>
-                </div>
-            </Slider>
-        </div>
-    );
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
+
+function Slider() {
+  const carouselItems = [
+    { icon: "/shipicon.png", title: "2B +", subtitle: "Shipments Count" },
+    { icon: "/globeicon.png", title: "3M Total", subtitle: "Exporter Importer" },
+    { icon: "/mapicon.png", title: "+195", subtitle: "Countries Trade Data" },
+    { icon: "/trade_data.png", title: "Global", subtitle: "Trade Data" },
+    { icon: "/historical_data.png", title: "5Y+", subtitle: "Historical Data" },
+    { icon: "/trade_document_icon.png", title: "100M+", subtitle: "Trade Documents" },
+    { icon: "/update_icon.png", title: "Real-time", subtitle: "Updates" },
+    { icon: "/ai_icon.jpg", title: "AI-Powered", subtitle: "Analytics" },
+  ];
+
+  return (
+    <div className="relative w-full py-8">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+        className="w-full max-w-[1000px] mx-auto"
+      >
+        <CarouselContent className="-ml-6">
+          {carouselItems.map((item, index) => (
+            <CarouselItem key={index} className="pl-6 basis-1/4">
+              <div className="p-1">
+                <Card className="border border-gray-200 rounded-xl shadow-md">
+                  <CardContent className="flex flex-col items-center justify-center p-6 h-[160px]">
+                    <Image
+                      loading="lazy"
+                      src={item.icon}
+                      width={64}
+                      height={64}
+                      alt=""
+                      className="mb-4"
+                    />
+                    <div className="text-center text-sm font-semibold">
+                      {item.title}<br />
+                      {item.subtitle.split(' ').map((word, i) => (
+                        <React.Fragment key={i}>
+                          {word}
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute -left-12 top-1/2 transform -translate-y-1/2" />
+        <CarouselNext className="absolute -right-12 top-1/2 transform -translate-y-1/2" />
+      </Carousel>
+    </div>
+  );
 }
 
-export default ResponsiveSlider;
+export default Slider;
