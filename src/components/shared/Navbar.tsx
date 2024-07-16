@@ -58,7 +58,7 @@ export default function Navbar() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  const toggleMobileSubmenu = (submenu) => {
+  const toggleMobileSubmenu = (submenu: React.SetStateAction<string>) => {
     setMobileSubmenuOpen(mobileSubmenuOpen === submenu ? "" : submenu);
   };
 
@@ -158,13 +158,13 @@ export default function Navbar() {
                 </NavigationMenuItem>
     
                 <NavigationMenuItem>
-                  <a href="#" className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Data</a>
+                  <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Data</a>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <a href="#" className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Plan</a>
+                  <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Plan</a>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <a href="#" className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Research & Insights</a>
+                  <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Research & Insights</a>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

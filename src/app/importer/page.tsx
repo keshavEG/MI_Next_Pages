@@ -1,3 +1,4 @@
+import Importer_Links from "@/components/Importer/Importer_Links";
 import Insights from "@/components/importer/Insights_tabs";
 import Tabs_Desc from "@/components/importer/Tabs_Descriptions";
 import Video from "@/components/importer/Video_Importer";
@@ -15,6 +16,7 @@ export default function Importer(){
                 </h1>
             </div>
             <Insights />
+            <Importer_Links />
         </div>
     );
 
