@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -36,34 +36,16 @@ const TabContent = ({ title, content, image }) => (
   </div>
 );
 
-export default function Tabs_Desc() {
-  const [activeTab, setActiveTab] = useState('suppliers');
-
-  const tabData = {
-    suppliers: {
-      title: "Finding Suppliers",
-      content: "Discover reliable suppliers for your business needs. Our extensive database helps you find the perfect match for your products and services.",
-      image: "/importer_alt_tabs3.png"
-    },
-    competitors: {
-      title: "Trade Competitors",
-      content: "Stay ahead of the competition by analyzing their trade activities. Gain insights into market trends and adapt your strategies accordingly.",
-      image: "/importer_alt_tabs2.png"
-    },
-    activity: {
-      title: "Tracking Activity",
-      content: "Monitor inbound and outbound shipments to ensure quality service. Keep track of your own shipments and analyze trade patterns.",
-      image:  "/importer_alt_tabs1.png"
-    }
-  };
+export default function Tabs_Desc_alt({ data }) {
+  const [activeTab, setActiveTab] = useState(Object.keys(data.tabs)[0]);
 
   return (
     <div className="flex flex-col px-5 max-w-6xl mx-auto">
       <h1 className="w-full text-4xl font-bold leading-tight text-black uppercase mb-8">
-        Grow Your Business Exponentially From Trade Data
+        {data.heading}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {Object.entries(tabData).map(([key, { title }]) => (
+        {Object.entries(data.tabs).map(([key, { title }]) => (
           <button
             key={key}
             className={`flex items-center justify-center py-4 px-6 text-lg font-semibold rounded-xl shadow-sm transition-colors ${
@@ -77,7 +59,7 @@ export default function Tabs_Desc() {
           </button>
         ))}
       </div>
-      <TabContent {...tabData[activeTab]} />
+      <TabContent {...data.tabs[activeTab]} />
     </div>
   );
 }

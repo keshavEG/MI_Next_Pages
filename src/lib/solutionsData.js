@@ -65,7 +65,34 @@ const getSolutionsData = () => {
         exporters: "/exporters",
         salesMarketing: "/sales-marketing",
         itConsulting: "/it-consulting"
-      }
+      },
+      cards: [
+        {
+          title: "INDUSTRIAL MACHINERY",
+          content: "Industrial machinery is the highly demanded component of industrial production for manufacturing different final products. China is the largest producer and exporter of industrial machinery and other countries import most of their machinery from China only. The total import-export of industrial machinery totalled a worth of $5.0 trillion in the year 2021.",
+          imageSrc: "/industrial_machinery_insights.png"
+        },
+        {
+          title: "ELECTRONICS",
+          content: "The highest importing commodities for the year 2020, in the pre-pandemic environment, were electronic products. The products such as laptops, cellular networks, mobile phones, webcams, headgears found an increasing demand in the countries, especially with the new rising trend of 'work from home'. Electronics' trade totalled $7.0 trillion in 2021.",
+          imageSrc: "/electronics_insights.png"
+        },
+        {
+          title: "FUELS AND OILS",
+          content: "Petroleum and natural gas are the core industries that give 'fuel' or energy to different industries. Russia and Middle-East countries are the largest producers of oil in the world and export the highest to geographical locations such as China, the EU, and the USA. The imports-exports of fuels and oils totalled a worth of $5.0 trillion in 2021.",
+          imageSrc: "/fuel_oil_importer_alt.png"
+        },
+        {
+          title: "PHARMACEUTICALS",
+          content: "The imports of pharmaceuticals, especially drugs rose in 2020 and continued to increase so along with a demand for medicinal devices and products due to COVID-19. Commodities such as drugs, vaccines, and immunological products were traded the highest in 2021. Total imports and exports totalled $1.6 trillion in 2021.",
+          imageSrc: "/pharma_alt.png"
+        },
+        {
+          title: "OTHERS",
+          content: "Plastics, Optical & Medical Instruments, Chemicals, Metals, and Minerals are also one of the demanding industries whose commodities are imported worldwide the highest. Trade insights on these commodities can also be found in our trade intelligence platform online.",
+          imageSrc: "/others_insights.png"
+        }
+      ]
     },
     {
       id: "solution2",
@@ -126,7 +153,34 @@ const getSolutionsData = () => {
         exporters: "/exporters",
         salesMarketing: "/sales-marketing",
         itConsulting: "/it-consulting"
-      }
+      },
+      cards: [
+        {
+          title: "INDUSTRIAL MACHINERY",
+          content: "Industrial machinery is the highly demanded component of industrial production for manufacturing different final products. China is the largest producer and exporter of industrial machinery and other countries import most of their machinery from China only. The total import-export of industrial machinery totalled a worth of $5.0 trillion in the year 2021.",
+          imageSrc: "/industrial_machinery_insights.png"
+        },
+        {
+          title: "ELECTRONICS",
+          content: "The highest importing commodities for the year 2020, in the pre-pandemic environment, were electronic products. The products such as laptops, cellular networks, mobile phones, webcams, headgears found an increasing demand in the countries, especially with the new rising trend of 'work from home'. Electronics' trade totalled $7.0 trillion in 2021.",
+          imageSrc: "/electronics_insights.png"
+        },
+        {
+          title: "FUELS AND OILS",
+          content: "Petroleum and natural gas are the core industries that give 'fuel' or energy to different industries. Russia and Middle-East countries are the largest producers of oil in the world and export the highest to geographical locations such as China, the EU, and the USA. The imports-exports of fuels and oils totalled a worth of $5.0 trillion in 2021.",
+          imageSrc: "/fuel_oil_importer_alt.png"
+        },
+        {
+          title: "PHARMACEUTICALS",
+          content: "The imports of pharmaceuticals, especially drugs rose in 2020 and continued to increase so along with a demand for medicinal devices and products due to COVID-19. Commodities such as drugs, vaccines, and immunological products were traded the highest in 2021. Total imports and exports totalled $1.6 trillion in 2021.",
+          imageSrc: "/pharma_alt.png"
+        },
+        {
+          title: "OTHERS",
+          content: "Plastics, Optical & Medical Instruments, Chemicals, Metals, and Minerals are also one of the demanding industries whose commodities are imported worldwide the highest. Trade insights on these commodities can also be found in our trade intelligence platform online.",
+          imageSrc: "/others_insights.png"
+        }
+      ]
     }
     // Add more solutions as needed
   ];
