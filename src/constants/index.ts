@@ -40,3 +40,24 @@ export const articleMessages = {
         `Market trends, emerging risks, regulatory changes, and competitive landscapes worldwide.`
     ]
 };
+
+export const pagelinks = [
+    'importer',
+    'exporter',
+    'Logistics',
+    'Corporate',
+    'Academic Institution',
+    'Chemical',
+    'Textile',
+    'Seafood & Raw Meat',
+    'Electronics',
+    'Agro',
+    'Plastic',
+    'Mining & Metals',
+    'Research',
+    'IT and Consulting',
+    'Government',
+    'FMCG',
+    'Automobiles',
+    'Insurance'
+  ];

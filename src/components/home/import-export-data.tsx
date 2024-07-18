@@ -1,19 +1,160 @@
 'use client'
-import { button } from "@nextui-org/theme";
 import Image from "next/image";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { Row, Container, Col } from "react-bootstrap";
 
-
-
 function ImportExportData() {
-    const [displayText, setDisplayText] = useState('195+ Countries Trade Data');
     const [activeButton, setActiveButton] = useState('ALL DATA');
 
-    const handleClick = (text: SetStateAction<string>, classcss: SetStateAction<string>) => {
-        console.log("Here is the data------> ", text)
-        setDisplayText(text);
+    const handleClick = (classcss) => {
         setActiveButton(classcss);
+    };
+
+    const renderContent = () => {
+        switch (activeButton) {
+            case 'ALL DATA':
+                return (
+                    <>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                                </div>
+                                <p>195+ Countries Trade Data</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image loading="lazy" width={24} height={24} alt="" src="/arrow.png" />
+                                </div>
+                                <p>33 Statistical Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                                </div>
+                                <p>109 Suez Canal BL Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                                </div>
+                                <p>29 Exclusive Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image loading="lazy" width={24} height={24} alt="" src="/arrow.png" />
+                                </div>
+                                <p>184 Mirror Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                                </div>
+                                <p>190 Transit Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                                </div>
+                                <p>54 Detailed Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image loading="lazy" width={24} height={24} alt="" src="/arrow.png" />
+                                </div>
+                                <p>2 Bill of Lading Countries</p>
+                            </div>
+                        </Col>
+                        <Col md={4}>
+                            <div className="importExportDataDiv">
+                                <div>
+                                    <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                                </div>
+                                <p>190+ Cargo BL Countries</p>
+                            </div>
+                        </Col>
+                    </>
+                );
+            case 'DETAILED DATA':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>54 Detailed Countries</p>
+                    </div>
+                );
+            case 'STATISTICAL DATA':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>33 Statistical Countries</p>
+                    </div>
+                );
+            case 'MIRROR DATA':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>184 Mirror Countries</p>
+                    </div>
+                );
+            case 'BILL OF LADING':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>2 Bill of Lading Countries</p>
+                    </div>
+                );
+            case 'SC BILL OF LADING':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>109 Suez Canal BL Countries</p>
+                    </div>
+                );
+            case 'TRANSIT DATA':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>190 Transit Countries</p>
+                    </div>
+                );
+            case 'CARGO BL DATA':
+                return (
+                    <div className="importExportDataDiv">
+                        <div>
+                            <Image width={24} height={24} alt="" loading="lazy" src="/arrow.png" />
+                        </div>
+                        <p>190+ Cargo BL Countries</p>
+                    </div>
+                );
+            default:
+                return null;
+        }
     };
 
     return (
@@ -42,212 +183,77 @@ function ImportExportData() {
                         <div className="importexportbuttons">
                             <button
                                 className={activeButton === 'ALL DATA' ? 'active' : ''}
-                                onClick={() => handleClick('ALL DATA', 'ALL DATA')}
+                                onClick={() => handleClick('ALL DATA')}
                             >
                                 ALL DATA
                             </button>
                             <button
                                 className={activeButton === 'DETAILED DATA' ? 'active' : ''}
-                                onClick={() => handleClick('DETAILED DATA', 'DETAILED DATA')}
+                                onClick={() => handleClick('DETAILED DATA')}
                             >
                                 DETAILED DATA
                             </button>
                             <button
                                 className={activeButton === 'STATISTICAL DATA' ? 'active' : ''}
-                                onClick={() => handleClick('STATISTICAL DATA', 'STATISTICAL DATA')}
+                                onClick={() => handleClick('STATISTICAL DATA')}
                             >
                                 STATISTICAL DATA
                             </button>
                             <button
                                 className={activeButton === 'MIRROR DATA' ? 'active' : ''}
-                                onClick={() => handleClick('MIRROR DATA', 'MIRROR DATA')}
+                                onClick={() => handleClick('MIRROR DATA')}
                             >
                                 MIRROR DATA
                             </button>
                             <button
                                 className={activeButton === 'BILL OF LADING' ? 'active' : ''}
-                                onClick={() => handleClick('BILL OF LADING', 'BILL OF LADING')}
+                                onClick={() => handleClick('BILL OF LADING')}
                             >
                                 BILL OF LADING
                             </button>
                             <button
                                 className={activeButton === 'SC BILL OF LADING' ? 'active' : ''}
-                                onClick={() => handleClick('SC BILL OF LADING', 'SC BILL OF LADING')}
+                                onClick={() => handleClick('SC BILL OF LADING')}
                             >
                                 SC BILL OF LADING
                             </button>
                             <button
                                 className={activeButton === 'TRANSIT DATA' ? 'active' : ''}
-                                onClick={() => handleClick('TRANSIT DATA', 'TRANSIT DATA')}
+                                onClick={() => handleClick('TRANSIT DATA')}
                             >
                                 TRANSIT DATA
                             </button>
                             <button
                                 className={activeButton === 'CARGO BL DATA' ? 'active' : ''}
-                                onClick={() => handleClick('CARGO BL DATA', 'CARGO BL DATA')}
+                                onClick={() => handleClick('CARGO BL DATA')}
                             >
                                 CARGO BL DATA
                             </button>
                         </div>
                     </Col>
                     <Col md={9}>
-
-
                         <div className="mapDiv">
-                            <img
-                                loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/83badc114813cc0ef53eeae33628f5ee69b4b8070ace3dd56ac004ee609b510f?"
-                                className="self-center max-w-full aspect-[1.85] w-[608px]"
-                            />
+                            <Image
+                                width={600}
+                                height={500}
+                                alt=""
+                                src={activeButton === "ALL DATA" ? "/alldata.png" : activeButton === "DETAILED DATA" ? "/detaileddata.png" : activeButton === "STATISTICAL DATA" ? "/statisticaldata.png" : activeButton === "MIRROR DATA" ? "/mirrordata.png" : activeButton === "BILL OF LADING" ? "/billoflading.png" : activeButton === "SC BILL OF LADING" ? "/scbilloflading.png" : activeButton === "TRANSIT DATA" ? "/transitdata.png" : "/cargobldata.png"} />
                             <div className="mt-7 max-md:max-w-full">
                                 <div className="gap-5 max-md:flex-col max-md:gap-0">
-
                                     <div>
                                         <Row>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            loading="lazy"
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            loading="lazy"
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            loading="lazy"
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
+
+                                            {renderContent()}
                                         </Row>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
                     </Col>
                 </Row>
-
-
             </Container>
         </div>
-    )
+    );
 }
 
-export default ImportExportData
+export default ImportExportData;
