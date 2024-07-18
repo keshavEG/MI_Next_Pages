@@ -44,7 +44,8 @@ function Products() {
                 </Col>
                 <Col className='product-second-col' md={9}>
                     <div className='product-second-heading'>
-                        <h3>Technological advancements provide a competitive edge</h3>
+                        <h3>{activeLink === "platform" ? "Technological advancements provide a competitive edge" : activeLink === "api" ? "Unleash Global Market Insights with APIs" : "Latest Trade Datasets on Global Supply Chain"}</h3>
+                        {/* <h3>Technological advancements provide a competitive edge</h3> */}
                     </div>
                     <Row>
                         <Col className='product-inner-div' md={7}>
