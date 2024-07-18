@@ -89,6 +89,9 @@
     color: #FB923C;
 }
 
+.schedule-heading-text {
+    color: #333;
+}
 .services-div {
     padding-block: 10vh;
     padding-inline: 10vw;
@@ -110,9 +113,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* background-color: #f8f8f8; */
     padding: 10px 0;
-    /* border-bottom: 2px solid #ccc; */
 }
 
 .navbar a {
@@ -167,7 +168,7 @@
     }
 
     .schedule-heading-text {
-        width: 100%;
+        font-size: 30px;
     }
 
     .navbar {
@@ -191,6 +192,13 @@
         align-items: center;
         justify-content: center;
     }
+    .service-img-div {
+        display: none;
+    }
+    .customers-div {
+        
+    }
+   
 }
 .product-child-inner-div {
     display: none;
@@ -280,4 +288,8 @@
 .product-inner-div {
     padding-inline: 20px;
     margin-top: 40px;
+}
+.navbar-links {
+    text-decoration: none;
+    color: black;
 }

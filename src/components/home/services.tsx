@@ -92,7 +92,7 @@ function Services() {
                         ))}
                     </div>
                 </Col>
-                <Col>
+                <Col className='service-img-div'>
                     <div className='services-img'>
                         <Image src={
                             (activeLink === 'importer' ? '/importer.png' :
