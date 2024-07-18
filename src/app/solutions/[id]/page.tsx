@@ -12,12 +12,14 @@ import Importer_Links from '@/components/Importer/Importer_Links';
 import Video_Alt from '@/components/solutions_2/Video_Solutions_alt_dy';
 import Tabs_Desc_alt from '@/components/solutions_2/Tabs_Desc_alt_dy';
 import InsightsCards from '@/components/solutions_2/Insights_Card_alt_dy';
+import Read_More from '@/components/solutions/Read_More_Cards';
+import ReadMoreDialog from '@/components/solutions/Read_More_Cards';
 
 export default function Solutions({ params }) {
   const [solutionData, setSolutionData] = useState(null);
   const [isType1, setIsType1] = useState(false);
 
-  const type1Ids = ["solution1", "id2", "id3"]; // Add the IDs for the original components
+  const type1Ids = ["importer", "exporter", "id3"]; // Add the IDs for the original components
   // const type2Ids = ["id4", "id5", "id6"]; // Add the IDs for the alternate components
 
   useEffect(() => {
@@ -41,6 +43,8 @@ export default function Solutions({ params }) {
       {isType1 ? (
         <>
           <Video data={solutionData.video} />
+          <br />
+          <br />
           <Tabs_Desc data={solutionData.tabs} />
           <br />
           <br />
@@ -60,6 +64,7 @@ export default function Solutions({ params }) {
       <br />
       <br />
       {/* <BusinessInsights /> */}
+      
     </div>
   );
 }

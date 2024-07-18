@@ -8,15 +8,15 @@ const TabContent = ({ title, content, image }) => (
       <div className="flex flex-col w-[23%] max-md:ml-0 max-md:w-full">
         <div className="flex flex-col self-stretch my-auto max-md:mt-10">
           <div className="flex gap-4 px-2.5 text-xl font-semibold leading-6 text-black uppercase">
-            <img
+            {/* <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/a6769d18e500d5f6d55b1919390b4064c9fcbe6302a290c00018351c365c079f?apiKey=dedff2e04f3045829c86df72e70dd24a&"
               className="shrink-0 self-start mt-2.5 w-4 aspect-[1.23]"
               alt=""
-            />
-            <div className="flex-1">
+            /> */}
+            {/* <div className="flex-1">
               {title}
-            </div>
+            </div> */}
           </div>
           <div className="mt-9 text-base leading-7 text-neutral-500">
             {content}
