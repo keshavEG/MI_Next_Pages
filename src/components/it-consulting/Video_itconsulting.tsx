@@ -22,11 +22,6 @@ export default function Video(){
             </div>
           </div>
           <div className="flex justify-center items-center self-start px-16 mt-3.5 rounded-full aspect-square bg-white bg-opacity-90 max-md:px-5">
-            {/* <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/72fc1ed3beddc59237428c0485176b8b3a21b18ccfff4f58283a4c30e1ec0910?apiKey=1d97127843014888b916aa6ba331e743&"
-              className="aspect-square w-[58px]"
-            /> */}
             <Image
             src="/play_button_it_consulting.png"
             width={120}

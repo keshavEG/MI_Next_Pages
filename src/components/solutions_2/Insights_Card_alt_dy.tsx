@@ -14,10 +14,10 @@ const InsightsCard = ({ title, content, imageSrc }) => (
           objectFit="cover"
           className="absolute inset-0"
         />
-        <div className="relative text-2xl uppercase">
+        <div className="relative text-2xl uppercase text-center">
           {title}
         </div>
-        <div className="relative mt-10 text-base leading-6 text-justify max-md:mt-10">
+        <div className="relative mt-10 text-base leading-6 text-justify max-md:mt-10 text-center">
           {content}
         </div>
         <div className="flex relative gap-2 self-start mt-11 text-sm font-bold text-orange-400 uppercase max-md:mt-10">
@@ -31,7 +31,7 @@ const InsightsCard = ({ title, content, imageSrc }) => (
 const InsightsCards = ({ data }) => {
   return (
     <div className="self-center mt-11 w-full max-md:mt-10 max-md:max-w-full">
-      <div className="flex gap-5 flex-wrap max-md:flex-col max-md:gap-0">
+      <div className="flex gap-5 flex-wrap justify-center items-center max-md:flex-col max-md:gap-0">
         {data.map((card, index) => (
           <InsightsCard key={index} {...card} />
         ))}
