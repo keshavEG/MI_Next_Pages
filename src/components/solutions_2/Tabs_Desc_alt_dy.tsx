@@ -8,15 +8,9 @@ const TabContent = ({ title, content, image }) => (
       <div className="flex flex-col w-[23%] max-md:ml-0 max-md:w-full">
         <div className="flex flex-col self-stretch my-auto max-md:mt-10">
           <div className="flex gap-4 px-2.5 text-xl font-semibold leading-6 text-black uppercase">
-            {/* <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a6769d18e500d5f6d55b1919390b4064c9fcbe6302a290c00018351c365c079f?apiKey=dedff2e04f3045829c86df72e70dd24a&"
-              className="shrink-0 self-start mt-2.5 w-4 aspect-[1.23]"
-              alt=""
-            /> */}
-            {/* <div className="flex-1">
+            <div className="flex-1">
               {title}
-            </div> */}
+            </div>
           </div>
           <div className="mt-9 text-base leading-7 text-neutral-500">
             {content}
@@ -27,9 +21,10 @@ const TabContent = ({ title, content, image }) => (
         <Image
           src={image}
           alt={title}
+          layout="responsive"
           width={800}
-          height={288}
-          className="grow w-full aspect-[2.78] max-md:mt-10 max-md:max-w-full"
+          height={450}
+          className="grow w-full aspect-[1.78] max-md:mt-10 max-md:max-w-full"
         />
       </div>
     </div>
@@ -44,7 +39,7 @@ export default function Tabs_Desc_alt({ data }) {
       <h1 className="w-full text-4xl font-bold leading-tight text-black uppercase mb-8">
         {data.heading}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {Object.entries(data.tabs).map(([key, { title }]) => (
           <button
             key={key}
