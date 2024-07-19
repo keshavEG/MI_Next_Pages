@@ -29,7 +29,7 @@ export default function SoftwareSprawlComponent() {
   const [activeTab, setActiveTab] = useState('global-data');
 
   return (
-    <div className="max-w-[931px] mx-auto p-4">
+    <div className="max-w-[931px] mx-auto py-10">
       <h1 className="text-2xl font-bold text-center mb-8">
         STOP SOFTWARE SPRAWL AND GET MORE DONE
       </h1>
