@@ -19,7 +19,7 @@ export default function Resource_Center() {
           <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
             <Image
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8c156c264431b8c45442c4259b5e9f04d8f32b90fc4b766778e04f470ad4ce26?apiKey=1d97127843014888b916aa6ba331e743&width=800"
+              src="/Video_preview.png"
               width={800}
               height={536}
               alt="Resource Image"
@@ -32,7 +32,7 @@ export default function Resource_Center() {
               <div className="flex gap-2 self-start text-center text-black whitespace-nowrap leading-[120%]">
                 <Image
                   loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&width=20"
+                  src="/webinar_icon.png"
                   width={20}
                   height={20}
                   alt="Webinar Icon"

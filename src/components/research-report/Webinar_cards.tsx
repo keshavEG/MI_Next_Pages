@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Webinar_Cards(){
     return(
         <div>
@@ -5,9 +7,12 @@ export default function Webinar_Cards(){
             <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col grow px-5 text-base leading-4 max-md:mt-10 max-md:max-w-full">
                 <div className="flex gap-2.5 self-start text-center text-black whitespace-nowrap leading-[120%]">
-                    <img
+                    <Image
                     loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
+                    src="/webinar_icon.png"
+                    width={20}
+                    height={20}
+                    alt="Webinar Icon"
                     className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
@@ -28,10 +33,13 @@ export default function Webinar_Cards(){
                     Read more...
                 </div>
                 <div className="flex gap-2.5 self-start mt-24 text-center text-black whitespace-nowrap leading-[120%] max-md:mt-10">
-                    <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
-                    className="shrink-0 w-5 aspect-square fill-zinc-400"
+                    <Image
+                        loading="lazy"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
+                        className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
                 </div>
@@ -55,10 +63,13 @@ export default function Webinar_Cards(){
             <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col grow px-5 text-base leading-4 max-md:mt-10 max-md:max-w-full">
                 <div className="flex gap-2.5 self-start text-center text-black whitespace-nowrap leading-[120%]">
-                    <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
-                    className="shrink-0 w-5 aspect-square fill-zinc-400"
+                    <Image
+                        loading="lazy"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
+                        className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
                 </div>
@@ -78,10 +89,13 @@ export default function Webinar_Cards(){
                     Read more...
                 </div>
                 <div className="flex gap-2.5 self-start mt-24 text-center text-black whitespace-nowrap leading-[120%] max-md:mt-10">
-                    <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
-                    className="shrink-0 w-5 aspect-square fill-zinc-400"
+                    <Image
+                        loading="lazy"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
+                        className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
                 </div>

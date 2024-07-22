@@ -1,38 +1,63 @@
-// components/Tabs_Desc.js
-"use client"
+"use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const TabContent = ({ title, content, image }) => (
-  <div className="mt-8">
-    {/* <h3 className="text-xl font-semibold mb-4">{title}</h3> */}
-    <p className="text-base leading-7 text-neutral-500 mb-4">{content}</p>
-    <Image src={image} alt={title} className="w-full rounded-lg shadow-md" width={500} height={300} />
-  </div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.5 }}
+    className="mt-8"
+  >
+    <p className="text-lg leading-7 text-gray-700 mb-6">{content}</p>
+    <div className="relative overflow-hidden rounded-xl shadow-lg">
+      <Image
+        src={image}
+        alt={title}
+        width={1200}
+        height={600}
+        layout="responsive"
+        className="w-full transition-transform duration-300 hover:scale-105"
+      />
+    </div>
+  </motion.div>
 );
 
 export default function Tabs_Desc({ data }) {
   const [activeTab, setActiveTab] = useState(Object.keys(data.tabs)[0]);
 
   return (
-    <div className="flex flex-col px-5 max-w-6xl mx-auto">
-      <h1 className="w-full text-4xl font-bold leading-tight text-center text-black uppercase mb-8">
+    <div className="flex flex-col px-5 py-12 max-w-6xl mx-auto">
+      <motion.h1
+      style={{fontSize:"2.25rem"}}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full text-4xl md:text-5xl font-bold leading-tight text-center text-gray-900 uppercase mb-12"
+      >
         {data.heading}
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {Object.entries(data.tabs).map(([key, { title }]) => (
-          <button
+      </motion.h1>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        {Object.entries(data.tabs).map(([key, { title, icon }]) => (
+          <motion.button
             key={key}
-            className={`flex items-center justify-center py-4 px-6 text-lg font-semibold rounded-xl shadow-sm transition-colors ${
-              activeTab === key ? 'bg-orange-400 text-white' : 'bg-white text-black hover:bg-gray-100'
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className={`flex items-center justify-center py-3 px-4 text-base sm:text-lg font-semibold rounded-lg shadow-sm transition-all duration-300 ${
+              activeTab === key
+                ? 'bg-orange-400 text-white'
+                : 'bg-white text-gray-800 hover:bg-gray-100'
             }`}
             onClick={() => setActiveTab(key)}
           >
             {title}
-          </button>
+          </motion.button>
         ))}
       </div>
-      <TabContent {...data.tabs[activeTab]} />
+      <AnimatePresence mode="wait">
+        <TabContent key={activeTab} {...data.tabs[activeTab]} />
+      </AnimatePresence>
     </div>
   );
 }

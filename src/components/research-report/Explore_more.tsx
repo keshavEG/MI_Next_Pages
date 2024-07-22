@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Explore_More(){
     return(
     <div className="flex pl-6 pr-6 gap-5 max-md:flex-col max-md:gap-0">
@@ -45,9 +47,12 @@ export default function Explore_More(){
                     Sales Prospecting
                     </div>
                     <div className="flex gap-2.5 self-start mt-7 text-base text-center whitespace-nowrap">
-                    <img
+                    <Image
                         loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
                         className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
@@ -60,9 +65,12 @@ export default function Explore_More(){
                     <div>3:30 AM ET</div>
                     </div>
                     <div className="flex gap-2.5 self-start mt-7 text-base text-center whitespace-nowrap">
-                    <img
+                    <Image
                         loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
                         className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
@@ -85,9 +93,12 @@ export default function Explore_More(){
                     Sales Prospecting
                     </div>
                     <div className="flex gap-2.5 self-start mt-7 text-base text-center whitespace-nowrap">
-                    <img
+                    <Image
                         loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
                         className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>
@@ -100,9 +111,12 @@ export default function Explore_More(){
                     <div>3:30 AM ET</div>
                     </div>
                     <div className="flex gap-2.5 self-start mt-7 text-base text-center whitespace-nowrap">
-                    <img
+                    <Image
                         loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/438a799a67c2e2e8d248f3d43d2a44ab7bba5e9783710366ddcfb74769f7f0bf?apiKey=1d97127843014888b916aa6ba331e743&"
+                        src="/webinar_icon.png"
+                        width={20}
+                        height={20}
+                        alt="Webinar Icon"
                         className="shrink-0 w-5 aspect-square fill-zinc-400"
                     />
                     <div>WEBINAR</div>

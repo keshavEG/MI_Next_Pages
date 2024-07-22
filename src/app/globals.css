@@ -109,3 +109,21 @@
     color: black;
   }
 } */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #29e;
+  transform-origin: 0%;
+  z-index: 1000;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .progress-bar {
+    display: block;
+  }
+}

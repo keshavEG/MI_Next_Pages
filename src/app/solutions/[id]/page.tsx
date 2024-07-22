@@ -17,7 +17,7 @@ export default function Solutions({ params }) {
   const [solutionData, setSolutionData] = useState(null);
   const [isType1, setIsType1] = useState(false);
 
-  const type1Ids = ["importer", "id2", "id3"]; // Add the IDs for the original components
+  const type1Ids = ["importer", "exporter", "logistics" , "corporate"]; // Add the IDs for the original components
   // const type2Ids = ["id4", "id5", "id6"]; // Add the IDs for the alternate components
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function Solutions({ params }) {
       <Importer_Links />
       <br />
       <br />
-      <BusinessInsights backgroundImageSrc={''} />
+      <BusinessInsights />
     </div>
   );
 }

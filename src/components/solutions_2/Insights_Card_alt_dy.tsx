@@ -1,4 +1,5 @@
 "use client";
+
 import React from 'react';
 import Image from 'next/image';
 import ReadMoreDialog from '../solutions/Read_More_Cards';
@@ -28,10 +29,10 @@ const InsightsCards = ({ data }) => {
   return (
     <div className="container mx-auto px-4 py-12">
       <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-        INDUSTRY-DRIVEN INSIGHTS FOR UP-TO-DATE INFORMATION
+        {data.heading}
       </h2>
       <div className="flex flex-wrap justify-center gap-6">
-        {data.map((card, index) => (
+        {data.items.map((card, index) => (
           <InsightsCard key={index} {...card} />
         ))}
       </div>

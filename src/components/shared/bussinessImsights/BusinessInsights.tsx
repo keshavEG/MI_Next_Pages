@@ -9,7 +9,7 @@ interface BusinessInsightsProps {
   backgroundImageSrc: string;
 }
 
-export const BusinessInsights: React.FC<BusinessInsightsProps> = ({ backgroundImageSrc }) => {
+export const BusinessInsights: React.FC<BusinessInsightsProps> = () => {
   const pathname = usePathname();
 
   // Extract the last part of the url
