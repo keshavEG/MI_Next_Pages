@@ -1,20 +1,26 @@
+"use client"
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
 import { Row, Container, Col } from "react-bootstrap";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useData } from '@/context/store';
 
 const PlansHeader = () => {
+
+    const { country } = useData()
+
     return (
         <div className='plans-header-div'>
             <Container>
                 <Row>
-                    <Col className='first-img'>
+                    <Col style={{ marginTop: '50px', marginLeft: '50px'}} className='first-img'>
                         <Image
-                            src="/globe.png"
-                            width={500}
-                            height={500}
+                            // src="/globe.png"
+                            src={country === "asia" ? "/continental-map/asia.png" : country === "africa" ? "/continental-map/africa.png" : country === "america" ? "/continental-map/south-america.png" : country === "europe" ? "/continental-map/europe.png" : "/globe.png"}
+                            width={400}
+                            height={400}
                             alt="globe-image"
                         />
                     </Col>
@@ -32,7 +38,7 @@ const PlansHeader = () => {
 
                             <div className='second-img'>
                                 <Image
-                                    src="/globe.png"
+                                    src={country === "asia" ? "/continental-map/asia.png" : country === "africa" ? "/continental-map/africa.png" : country === "america" ? "/continental-map/south-america.png" : country === "europe" ? "/continental-map/europe.png" : "/globe.png"}
                                     width={300}
                                     height={300}
                                     alt="globe-image"

@@ -16,9 +16,9 @@ function Products() {
     };
 
     return (
-        <div className='services-div'>
+        <div className='services-div product-div'>
             <h1 className='services-heading'>Our Products</h1>
-            <p className='services-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p className='services-para'>Designed with perfection, our intelligent trade products cater to the needs of each technology. Modeled on AI-technology, MI prioritizes data to each individual’s requirements by providing clients with an AI-based platform consisting of import and export records, country analysis and in-depth information on companies. </p>
             <Row className='product-row'>
                 <Col className='product-first-col' md={2}>
                     <div className='service-nav'>
@@ -48,7 +48,7 @@ function Products() {
                         {/* <h3>Technological advancements provide a competitive edge</h3> */}
                     </div>
                     <Row>
-                        <Col className='product-inner-div' md={7}>
+                        <Col className='product-inner-div' md={7} sm={12}>
                             <div className={activeLink != 'platform' ? 'product-child-inner-div' : ''}>
 
 

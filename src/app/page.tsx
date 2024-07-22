@@ -6,10 +6,11 @@ import CustomersWorldwide from "@/components/home/customers-worldwide";
 import ImportExportData from "@/components/home/import-export-data";
 import Services from "@/components/home/services";
 import Products from "@/components/home/products";
-import Slider from "@/components/home/slider";
+// import Slider from "@/components/home/slider";
 import ScheduleDemo from "@/components/home/scheduleDemo";
 import FirstComponent from "@/components/home/first-component";
 import { BusinessInsights } from "@/components/shared/bussinessImsights/BusinessInsights";
+import Slider from "@/components/shared/slider";
 
 
 
@@ -22,7 +23,8 @@ export default function Home() {
 
       <ScheduleDemo />
 
-      {/* <Slider /> */}
+      <div style={{ background: '#fafafa', paddingBlock: '40px', marginBottom: '40px'}}><Slider /></div>
+
 
       <CustomersWorldwide />
 

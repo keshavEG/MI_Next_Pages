@@ -11,15 +11,14 @@ const PlanCards = () => {
     const handleButtonClick = (buttonId: string) => {
         setActiveButton(buttonId);
         setCountry(buttonId)
-    };  
+    };
 
-    console.log("CHeck this output ------> ", country)
 
     return (
         <div className='planCard-div'>
             <Container>
                 <Row>
-                    <Col style={{ marginBottom: '20px'}} lg md={6} sm={12}>
+                    <Col style={{ marginBottom: '20px' }} lg md={6} sm={12}>
                         <div className={`${activeButton === "asia" ? "border-div" : ""}`}>
                             <div className='single-plancard'>
                                 <h2 className='country-name'>Asia</h2>
@@ -33,18 +32,19 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>36</span> Countries Suez Canal Bill of Lading Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>48</span> Countries Transit Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-first'>
+                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "asia" ? "#f8992f" : "grey"}`,
                                         color: 'white',
                                         '&:hover': {
                                             backgroundColor: '#f8992f',
                                         },
-                                    }} onClick={() => handleButtonClick("asia")}>Request A Demo</Button>
+                                    }} onClick={() => handleButtonClick("asia")}>Read more</Button>
                                 </div>
                             </div>
                         </div>
                     </Col>
-                    <Col style={{ marginBottom: '20px'}} lg md={6} sm={12}>
+                    <Col style={{ marginBottom: '20px' }} lg md={6} sm={12}>
                         <div className={`${activeButton === "africa" ? "border-div" : ""}`}>
                             <div className='single-plancard'>
                                 <h2 className='country-name'>Africa</h2>
@@ -58,19 +58,20 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>21</span> Countries Suez Canal Bill of Lading Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>53</span> Countries Transit Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-second'>
+                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "africa" ? "#f8992f" : "grey"}`,
                                         color: 'white',
                                         '&:hover': {
                                             backgroundColor: '#f8992f',
                                         },
-                                    }} onClick={() => handleButtonClick("africa")}>Request A Demo</Button>
+                                    }} onClick={() => handleButtonClick("africa")}>Read more</Button>
                                 </div>
                             </div>
                         </div>
                     </Col>
 
-                    <Col style={{ marginBottom: '20px'}} lg md={6} sm={12}>
+                    <Col style={{ marginBottom: '20px' }} lg md={6} sm={12}>
                         <div className={`${activeButton === "america" ? "border-div" : ""}`}>
                             <div className='single-plancard'>
                                 <h2 className='country-name'>America</h2>
@@ -84,19 +85,20 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>16</span> Countries Suez Canal Bill of Lading Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>31</span> Countries Transit Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-third'>
+                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "america" ? "#f8992f" : "grey"}`,
                                         color: 'white',
                                         '&:hover': {
                                             backgroundColor: '#f8992f',
                                         },
-                                    }} onClick={() => handleButtonClick("america")}>Request A Demo</Button>
+                                    }} onClick={() => handleButtonClick("america")}>Read more</Button>
                                 </div>
                             </div>
                         </div>
                     </Col>
 
-                    <Col style={{ marginBottom: '20px'}} lg md={6} sm={12}>
+                    <Col style={{ marginBottom: '20px' }} lg md={6} sm={12}>
                         <div className={`${activeButton === "europe" ? "border-div" : ""}`}>
                             <div className='single-plancard'>
                                 <h2 className='country-name'>Europe</h2>
@@ -111,19 +113,20 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>50</span> Countries Transit Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>28</span> Countries Statistical Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-forth'>
+                                    <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "europe" ? "#f8992f" : "grey"}`,
                                         color: 'white',
                                         '&:hover': {
                                             backgroundColor: '#f8992f',
                                         },
-                                    }} onClick={() => handleButtonClick("europe")}>Request A Demo</Button>
+                                    }} onClick={() => handleButtonClick("europe")}>Read more</Button>
                                 </div>
                             </div>
                         </div>
                     </Col>
 
-                    <Col style={{ marginBottom: '20px'}} lg md={6} sm={12}>
+                    <Col style={{ marginBottom: '20px' }} lg md={6} sm={12}>
                         <div className={`${activeButton === "global" ? "border-div" : ""}`}>
                             <div className='single-plancard'>
                                 <h2 className='country-name'>Global</h2>
@@ -138,13 +141,14 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>193</span> Countries Transit Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>33</span> Countries Statistical Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-fifth'>
+                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "global" ? "#f8992f" : "grey"}`,
                                         color: 'white',
                                         '&:hover': {
                                             backgroundColor: '#f8992f',
                                         },
-                                    }} onClick={() => handleButtonClick("global")}>Request A Demo</Button>
+                                    }} onClick={() => handleButtonClick("global")}>Read more</Button>
                                 </div>
                             </div>
                         </div>
