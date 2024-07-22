@@ -4,6 +4,8 @@ import { useRef, useEffect, Fragment } from 'react'
 import Image from 'next/image'
 import { Tab } from '@headlessui/react'
 import { Transition } from '@headlessui/react'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function PlatformTabs() {
   const tabs = [
@@ -51,18 +53,17 @@ export default function PlatformTabs() {
   }, [])
 
   return (
-    <div className="py-10 bg-gray-50"> {/* Added padding and background */}
+    <div className="py-10 bg-gray-50">
       <Tab.Group>
         {({ selectedIndex }) => (
           <div>
-            {/* Buttons */}
-            <div className="w-full bg-black">
+            <div className="hidden md:block w-full bg-black">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <Tab.List className="flex justify-between items-center py-4 text-sm font-semibold text-white uppercase">
+                <Tab.List className="flex justify-between items-center py-4 text-sm font-semibold text-white uppercase overflow-x-auto scrollbar-hide">
                   {tabs.map((tab, index) => (
                     <Tab key={index} as={Fragment}>
                       <button
-                        className={`focus:outline-none transition-colors duration-150 ease-in-out 
+                        className={`focus:outline-none transition-colors duration-150 ease-in-out whitespace-nowrap 
                           ${selectedIndex === index ? 'text-orange-400' : 'text-white hover:text-orange-400'}`}
                       >
                         {tab.title}
@@ -73,8 +74,26 @@ export default function PlatformTabs() {
               </div>
             </div>
 
-            {/* Tab panels */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16"> {/* Increased top margin */}
+            <div className="block md:hidden w-full bg-black">
+              <Carousel >
+                <CarouselContent style={{textAlign:'center' }} className="flex justify-center items-center py-4 text-sm font-semibold text-white uppercase">
+                  {tabs.map((tab, index) => (
+                    <CarouselItem key={index}>
+                      <button
+                        className={`focus:outline-none transition-colors duration-150 ease-in-out text-center 
+                          ${selectedIndex === index ? 'text-orange-400' : 'text-white hover:text-orange-400'}`}
+                      >
+                        {tab.title}
+                      </button>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="text-white absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-black bg-opacity-50 rounded-full">Prev</CarouselPrevious>
+                <CarouselNext className="text-white absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-black bg-opacity-50 rounded-full">Next</CarouselNext>
+              </Carousel>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
               <Tab.Panels>
                 <div className="relative flex flex-col" ref={tabsRef}>
                   {tabs.map((tab, index) => (
@@ -93,15 +112,15 @@ export default function PlatformTabs() {
                         leaveTo="opacity-0 translate-y-12"
                         beforeEnter={() => heightFix()}
                       >
-                        <div className="flex flex-col md:flex-row items-center gap-12">
+                        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
                           <div className="w-full md:w-5/12">
-                            <h2 className="text-4xl font-bold text-black uppercase leading-tight mb-6">
+                            <h2 className="text-2xl md:text-4xl font-bold text-black uppercase leading-tight mb-4 md:mb-6">
                               {tab.content}
                             </h2>
-                            <p className="text-base text-neutral-500 mb-8">
+                            <p className="text-sm md:text-base text-neutral-500 mb-6 md:mb-8">
                               {tab.excerpt}
                             </p>
-                            <button className="px-6 py-3 bg-orange-400 text-white text-sm font-semibold uppercase rounded-md hover:bg-orange-500 transition-colors">
+                            <button className="px-4 py-2 md:px-6 md:py-3 bg-orange-400 text-white text-xs md:text-sm font-semibold uppercase rounded-md hover:bg-orange-500 transition-colors">
                               Schedule A Demo
                             </button>
                           </div>

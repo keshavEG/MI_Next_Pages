@@ -1,37 +1,36 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import ReadMoreDialog from '../solutions/Read_More_Cards';
 
 const InsightsCard = ({ title, content, imageSrc }) => (
-  <div className="flex flex-col w-[32%] max-md:w-full card">
-    <div className="flex flex-col grow justify-center w-full font-semibold text-white bg-black leading-[120%] max-md:mt-4">
-      <div className="flex overflow-hidden relative flex-col px-10 py-10 w-full aspect-[0.9] mix-blend-plus-lighter max-md:px-5">
-        <Image
-          loading="lazy"
-          src={imageSrc}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0"
-        />
-        <div className="relative text-2xl uppercase text-center">
-          {title}
-        </div>
-        <div className="relative mt-10 text-base leading-6 text-justify max-md:mt-10 text-center">
-          {content}
-        </div>
-        <div className="flex relative gap-2 self-start mt-11 text-sm font-bold text-orange-400 uppercase max-md:mt-10">
-          {/* Placeholder for the "Read more" section if needed */}
+  <div className="relative w-full sm:w-[48%] lg:w-[32%] aspect-[4/3] overflow-hidden rounded-lg shadow-lg mb-6 group">
+    <Image
+      src={imageSrc}
+      alt={title}
+      layout="fill"
+      objectFit="cover"
+      className="transition-transform duration-300 group-hover:scale-110"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-70 transition-opacity duration-300">
+      <div className="p-6 flex flex-col justify-between h-full text-white">
+        <h3 className="text-xl font-bold mb-2 uppercase">{title}</h3>
+        <div className="space-y-4">
+          <p className="text-sm leading-relaxed">{content}</p>
+          <ReadMoreDialog title={title} />
         </div>
       </div>
     </div>
   </div>
-);  
+);
 
 const InsightsCards = ({ data }) => {
   return (
-    <div className="self-center mt-11 w-full max-md:mt-10 max-md:max-w-full">
-      <div className="flex gap-5 flex-wrap justify-center items-center max-md:flex-col max-md:gap-0">
+    <div className="container mx-auto px-4 py-12">
+      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        INDUSTRY-DRIVEN INSIGHTS FOR UP-TO-DATE INFORMATION
+      </h2>
+      <div className="flex flex-wrap justify-center gap-6">
         {data.map((card, index) => (
           <InsightsCard key={index} {...card} />
         ))}

@@ -17,7 +17,7 @@ export default function Solutions({ params }) {
   const [solutionData, setSolutionData] = useState(null);
   const [isType1, setIsType1] = useState(false);
 
-  const type1Ids = ["solution1", "id2", "id3"]; // Add the IDs for the original components
+  const type1Ids = ["importer", "id2", "id3"]; // Add the IDs for the original components
   // const type2Ids = ["id4", "id5", "id6"]; // Add the IDs for the alternate components
 
   useEffect(() => {
