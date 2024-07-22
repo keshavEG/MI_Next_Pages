@@ -19,7 +19,6 @@ export default function Importer_Links() {
 
   // Extract the last part of the url
   const currentPath = pathname.split('/').pop();
-  console.log("Pages name ---> ", currentPath);
 
   useEffect(() => {
 

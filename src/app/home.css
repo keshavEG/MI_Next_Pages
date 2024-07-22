@@ -92,6 +92,7 @@
 .schedule-heading-text {
     color: #333;
 }
+
 .services-div {
     padding-block: 10vh;
     padding-inline: 10vw;
@@ -99,14 +100,22 @@
 
 .services-heading {
     text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.services-para {
+    margin-bottom: 20px;
 }
 
 .services-para-div {
-    margin-top: 10vh;
+    margin-top: 30px;
 }
 
 .services-img {
     margin-left: 5vw;
+}
+.service-subheading {
+    font-size: 25px;
 }
 
 .navbar {
@@ -130,76 +139,13 @@
     border-bottom: 2px solid #fb923c;
 }
 
-@media (max-width: 600px) {
-    .heading-text-div {
-        width: 80vw;
-    }
-
-    .get-access {
-        font-size: 30px;
-    }
-
-    .market-intelligence {
-        font-size: 50px;
-        line-height: 1;
-    }
-
-    .first-img {
-        display: none;
-    }
-
-    .second-img {
-        display: flex;
-        margin-block: 20px;
-        width: 80vw;
-    }
-
-    .schedule-first-img {
-        display: none;
-    }
-
-    .schedule-second-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 30px;
-        margin-left: 25vw;
-        width: 80px;
-    }
-
-    .schedule-heading-text {
-        font-size: 30px;
-    }
-
-    .navbar {
-        flex-direction: column;
-    }
-
-    .navbar a {
-        padding: 10px 0;
-    }
-
-    .builder-color {
-        width: 60vw;
-    }
-
-    .customers-worldwide {
-        font-size: 20px;
-    }
-
-    .customer-img-div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .service-img-div {
-        display: none;
-    }
-    .customers-div {
-        
-    }
-   
+.mobile-view {
+    display: none;
 }
+.mobile-view-slider-home {
+    display: none;
+}
+
 .product-child-inner-div {
     display: none;
 }
@@ -289,7 +235,130 @@
     padding-inline: 20px;
     margin-top: 40px;
 }
-.navbar-links {
-    text-decoration: none;
-    color: black;
+
+
+
+@media (max-width: 600px) {
+    .heading-text-div {
+        width: 80vw;
+    }
+
+    .get-access {
+        font-size: 30px;
+    }
+
+    .market-intelligence {
+        font-size: 50px;
+        line-height: 1;
+    }
+
+    .first-img {
+        display: none;
+    }
+
+    .second-img {
+        display: flex;
+        margin-block: 20px;
+        width: 80vw;
+    }
+
+    .schedule-first-img {
+        display: none;
+    }
+
+    .schedule-second-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        margin-left: 25vw;
+        width: 80px;
+    }
+
+    .schedule-heading-text {
+        font-size: 30px;
+    }
+
+    .navbar {
+        /* flex-direction: row;
+        overflow-x: scroll; */
+        width: 950px;
+    }
+    .mobile-view-service {
+        width: 100%;
+        overflow: auto;
+    }
+    .navbar a {
+        padding: 10px 0;
+    }
+
+    .builder-color {
+        width: 60vw;
+    }
+
+    .customers-worldwide {
+        font-size: 20px;
+    }
+
+    .customer-img-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .service-img-div {
+        display: none;
+    }
+    .desktop-view {
+        display: none;
+    }
+    .mobile-view {
+        display: flex;
+    }
+    .mobile-view-slider-home {
+        display: flex;
+    }
+    .desktop-view-slider-home {
+        display: none;
+    }
+    .customers-div {
+        padding-inline: 5vw;
+        padding-block: 5vh;
+    }
+    .text-builder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .product-div {
+        margin-bottom: 500px;
+    }
+    .product-second-col {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .product-inner-div {
+        padding-inline: 20px;
+        margin-top: 0;
+    }
+    .product-inner-nav a {
+        margin-right: 0;
+        padding-inline: 15px;
+        padding-block: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+        font-weight: 500;
+        display: flex;
+        width: 150px;
+        margin-bottom: 5px;
+    }
+    .service-nav {
+        display: flex;
+        /* flex-direction: column; */
+        /* padding: 20px; */
+    }
+    
 }

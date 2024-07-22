@@ -61,3 +61,85 @@ export const pagelinks = [
     'Automobiles',
     'Insurance'
   ];
+
+
+// dynamicData.ts
+export const headings = {
+    importer: {
+      title: "Want to Go Global?",
+      subtitle: "Track all Import Commodities with Just a Single Click!"
+    },
+    exporter: {
+      title: "Understand the Market Dynamics with Intelligence Trade Data!",
+      subtitle: "Request For Demo to Unleash the Market Opportunities."
+    },
+    logistics: {
+      title: "Reach Your Targeted Market",
+      subtitle: "Double your Profit Globally with Market Inside"
+    },
+    corporate: {
+      title: "Know How Trade Data Works to Elevate the Business?",
+      subtitle: "Start Your Business Journey With Market Inside Platform!"
+    },
+    "academic-institution": {
+      title: "Trade Beyond The Borders!",
+      subtitle: "Subscribe To Market Inside For Worldwide Trade Coverage!"
+    },
+    chemical: {
+      title: "Want to Dive Into the World Of Trade Opportunities?",
+      subtitle: "Make Market Inside Your Business Partner with data coverage in 195+ Countries!"
+    },
+    textile: {
+      title: "Find Top Partners And Explore New Opportunities",
+      subtitle: "Elevate Your Business to New Heights"
+    },
+    "seafood&raw-meat": {
+      title: "Don’t Miss Out On Global Opportunities!",
+      subtitle: "Experience the Power of Market Inside Trade DATA"
+    },
+    electronics: {
+      title: "Ready to Start Your Business With New Partners?",
+      subtitle: "Market Inside offers detailed data coverage with 195+ Countries!"
+    },
+    agro: {
+      title: "Level Up Your Business",
+      subtitle: "Stay competitive In The Agro-Market with Global Trade Data"
+    },
+    plastic: {
+      title: "Connect With Global Buyers and Sellers",
+      subtitle: "Expand Horizon of Plastic Industry While Connecting With Global Suppliers"
+    },
+    "mining&metals": {
+      title: "Want to Connect With Top Businesses?",
+      subtitle: "Choose The Best Platform that Aligns With Your Mining & Metals Business"
+    },
+    research: {
+      title: "Enhance Quality Of Research Work",
+      subtitle: "Access Trade Data for Building Smarter Decisions"
+    },
+    itandconsulting: {
+      title: "Understand Emerging Technology Trends",
+      subtitle: "Leverage the Power of Trade Data to Explore New Avenues"
+    },
+    government: {
+      title: "Looking For Reliable Trade Data?",
+      subtitle: "Search Market Inside to Get Access To Global Insights"
+    },
+    fmcg: {
+      title: "Discover Market Trends",
+      subtitle: "Stay Ahead of Curve Globally With Latest FMCG Market Insights!"
+    },
+    automobiles: {
+      title: "Shift Gear to Go Global",
+      subtitle: "Identify New Markets, Connect With Potential Businesses & Clients"
+    },
+    Insurance : {
+      title: "Procure Detailed Risk Analysis",
+      subtitle: "Minimize Risk and Drive Business to Fuel International Growth"
+    },
+    default : {
+      title: "Set Your Business",
+      subtitle: "In Motion With Valuable Insights!" 
+    }
+  };
+  
