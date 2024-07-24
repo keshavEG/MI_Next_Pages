@@ -5,8 +5,7 @@ const InsightsSection: React.FC = () => {
         <div className='insight-section'>
             <section className="flex flex-col">
                 <h1 className="insight-section-heading justify-center self-center max-w-full text-3xl font-bold leading-10 text-center uppercase w-[882px] max-md:max-w-full">
-                    <span className="text-neutral-400">Industry-Insights Served Through Smart Global</span>
-                    <br />
+                    <span className="text-neutral-400">Industry-Insights Served Through Smart Global </span>
                     <span className="text-black">Supply Chain Intelligence</span>
                 </h1>
                 <div className="supply-card flex flex-col justify-center px-9 mt-20 w-full bg-white border border-solid border-zinc-300 max-md:px-5 max-md:mt-10 max-md:max-w-full">

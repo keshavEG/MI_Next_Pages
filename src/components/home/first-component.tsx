@@ -1,9 +1,13 @@
+"use client"
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
 import { Row, Container, Col } from "react-bootstrap";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { DotLottiePlayer, Controls } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
+
 
 function FirstComponent() {
     return (
@@ -11,15 +15,22 @@ function FirstComponent() {
             <Container>
                 <Row>
                     <Col className='first-img'>
-                        <Image
+                        {/* <Image
                             src="/globe.png"
                             width={500}
                             height={500}
                             alt="globe-image"
-                        />
+                        /> */}
+                        <div>
+                            <DotLottiePlayer
+                                src="https://lottie.host/d91975e8-eafb-4584-aa71-89b991bcb875/YpFOtFaI58.json"
+                                autoplay
+                                loop
+                            />
+                        </div>
                     </Col>
                     <Col>
-                        <div className="flex flex-col flex-wrap content-end max-w-[434px]">
+                        <div className="heading-div flex flex-col flex-wrap content-end max-w-[534px]">
                             <div className='heading-text-div'>
                                 <div className="get-access self-start text-6xl font-bold text-black uppercase leading-[66px]">
                                     get access of
@@ -33,19 +44,25 @@ function FirstComponent() {
                             </div>
 
                             <div className='second-img'>
-                                <Image
+                                {/* <Image
                                     src="/globe.png"
                                     width={500}
                                     height={500}
                                     alt="globe-image"
-                                />
+                                /> */}
+                                <div>
+                                    <DotLottiePlayer
+                                        src="https://lottie.host/d91975e8-eafb-4584-aa71-89b991bcb875/YpFOtFaI58.json"
+                                        autoplay
+                                        loop
+                                    />
+                                </div>
                             </div>
                             <div className="mt-8 w-full bg-black border border-black border-dashed min-h-[1px]" />
                             <div className="mt-8 w-full text-xl font-semibold leading-5 text-black uppercase">
                                 <span className="text-2xl font-bold">Grow Your Business</span>{" "}
                             </div>
                             <div className="flex gap-5 justify-among mt-5 w-full text-sm font-bold leading-4 uppercase">
-
 
                                 <div>
 
