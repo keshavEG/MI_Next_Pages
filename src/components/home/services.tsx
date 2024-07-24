@@ -6,7 +6,6 @@ import { Col, Row } from 'react-bootstrap'
 import { messages, articleMessages } from '@/constants'
 
 
-
 function Services() {
 
     const [activeLink, setActiveLink] = useState('importer');

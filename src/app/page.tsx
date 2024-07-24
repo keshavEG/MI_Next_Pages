@@ -19,11 +19,11 @@ export default function Home() {
     <div className="home-header">
       <FirstComponent />
 
-      <div className="mt-[10vh] ml-[10vw] w-[80vw] bg-black border border-dashed min-h-[1px]" />
+      {/* <div className="mt-[10vh] ml-[10vw] w-[80vw] bg-black border border-dashed min-h-[1px]" /> */}
 
       <ScheduleDemo />
 
-      <div style={{ background: '#fafafa', paddingBlock: '40px', marginBottom: '40px'}}><Slider /></div>
+      <div className="main-slider-div"><Slider /></div>
 
 
       <CustomersWorldwide />

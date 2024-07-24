@@ -37,11 +37,10 @@ export default function ScheduleDemo() {
         {Object.entries(tabData).map(([key, { title }]) => (
           <button
             key={key}
-            className={`py-2 md:py-3 px-3 md:px-4 text-xs md:text-sm font-semibold leading-4 uppercase transition-colors ${
-              activeTab === key
+            className={`py-2 md:py-3 px-3 md:px-4 text-xs md:text-sm font-semibold leading-4 uppercase transition-colors ${activeTab === key
                 ? 'bg-amber-600 text-white'
                 : 'bg-zinc-50 text-black hover:bg-zinc-100'
-            }`}
+              }`}
             onClick={() => setActiveTab(key)}
           >
             {title}
