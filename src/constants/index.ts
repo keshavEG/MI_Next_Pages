@@ -1,3 +1,6 @@
+import { Subtitles } from "lucide-react";
+import { title } from "process";
+
 export const messages = {
     importer: `Find suppliers and their complete line of information and trace their origin, country, supply chain, etc.`,
     exporter: `Look for potential buyers, and monitor competitors using the global import and export data.`,
@@ -40,3 +43,109 @@ export const articleMessages = {
         `Market trends, emerging risks, regulatory changes, and competitive landscapes worldwide.`
     ]
 };
+
+export const pagelinks = [
+    'importer',
+    'exporter',
+    'Logistics',
+    'Corporate',
+    'Academic Institution',
+    'Chemical',
+    'Textile',
+    'Seafood & Raw Meat',
+    'Electronics',
+    'Agro',
+    'Plastic',
+    'Mining & Metals',
+    'Research',
+    'IT and Consulting',
+    'Government',
+    'FMCG',
+    'Automobiles',
+    'Insurance'
+  ];
+
+
+export const headings = {
+    "/solutions/importer": {
+      title: "Want to Go Global?",
+      subtitle: "Track all Import Commodities with Just a Single Click!"
+    },
+    "/solutions/exporter": {
+      title: "Understand the Market Dynamics with Intelligence Trade Data!",
+      subtitle: "Request For Demo to Unleash the Market Opportunities."
+    },
+    "/solutions/logistics": {
+      title: "Reach Your Targeted Market",
+      subtitle: "Double your Profit Globally with Market Inside"
+    },
+    "/solutions/corporate": {
+      title: "Know How Trade Data Works to Elevate the Business?",
+      subtitle: "Start Your Business Journey With Market Inside Platform!"
+    },
+    "/solutions/academic-institution": {
+      title: "Trade Beyond The Borders!",
+      subtitle: "Subscribe To Market Inside For Worldwide Trade Coverage!"
+    },
+    "/solutions/chemical": {
+      title: "Want to Dive Into the World Of Trade Opportunities?",
+      subtitle: "Make Market Inside Your Business Partner with data coverage in 195+ Countries!"
+    },
+    "/solutions/textile": {
+      title: "Find Top Partners And Explore New Opportunities",
+      subtitle: "Elevate Your Business to New Heights"
+    },
+    "/solutions/seafood&raw-meat": {
+      title: "Don’t Miss Out On Global Opportunities!",
+      subtitle: "Experience the Power of Market Inside Trade DATA"
+    },
+    "/solutions/electronics": {
+      title: "Ready to Start Your Business With New Partners?",
+      subtitle: "Market Inside offers detailed data coverage with 195+ Countries!"
+    },
+    "/solutions/agro": {
+      title: "Level Up Your Business",
+      subtitle: "Stay competitive In The Agro-Market with Global Trade Data"
+    },
+    "/solutions/plastic": {
+      title: "Connect With Global Buyers and Sellers",
+      subtitle: "Expand Horizon of Plastic Industry While Connecting With Global Suppliers"
+    },
+    "/solutions/mining&metals": {
+      title: "Want to Connect With Top Businesses?",
+      subtitle: "Choose The Best Platform that Aligns With Your Mining & Metals Business"
+    },
+    "/solutions/research": {
+      title: "Enhance Quality Of Research Work",
+      subtitle: "Access Trade Data for Building Smarter Decisions"
+    },
+    "/solutions/itandconsulting": {
+      title: "Understand Emerging Technology Trends",
+      subtitle: "Leverage the Power of Trade Data to Explore New Avenues"
+    },
+    "/solutions/government": {
+      title: "Looking For Reliable Trade Data?",
+      subtitle: "Search Market Inside to Get Access To Global Insights"
+    },
+    "/solutions/fmcg": {
+      title: "Discover Market Trends",
+      subtitle: "Stay Ahead of Curve Globally With Latest FMCG Market Insights!"
+    },
+    "/solutions/automobiles": {
+      title: "Shift Gear to Go Global",
+      subtitle: "Identify New Markets, Connect With Potential Businesses & Clients"
+    },
+    "/solutions/Insurance" : {
+      title: "Procure Detailed Risk Analysis",
+      subtitle: "Minimize Risk and Drive Business to Fuel International Growth"
+    },
+    "/datalicense" : {
+      title: "Leverage Market Intelligence Platform",
+      subtitle: "Get a scoop of available export and import data that drives your business." 
+    },
+    default : {
+      title: "Set Your Business",
+      subtitle: "In Motion With Valuable Insights!" 
+    }
+  };
+  

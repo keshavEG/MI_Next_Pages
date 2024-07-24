@@ -3,10 +3,12 @@ import Image from "next/image"
 export default function Video(){
     return(
         <div className="flex overflow-hidden relative flex-col justify-center items-center px-16 py-20 min-h-[421px] max-md:px-5">
-        <img
-          loading="lazy"
-          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/9f7ed417f8548604cf3ad40a48f34048f83af34d6426b2d2f02c1281d9b30b21?apiKey=1d97127843014888b916aa6ba331e743&"
-          className="object-cover absolute inset-0 size-full"
+
+        <Image 
+          src="/it_consulting_bg.png"
+          layout="fill"
+          objectFit="cover"
+          alt="It Consulting"
         />
         <div className="flex relative gap-5 justify-between mt-4 w-full max-w-[1107px] max-md:flex-wrap max-md:max-w-full">
           <div className="flex flex-col text-white max-md:max-w-full">

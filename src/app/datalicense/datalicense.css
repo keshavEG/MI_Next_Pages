@@ -1,0 +1,201 @@
+.datalicense-header {
+    padding-block: 40px;
+    padding-inline: 40px;
+    margin-inline: 60px;
+}
+.second-datalicense-img {
+    display: none;
+}
+.image-accor {
+    margin-left: 280px;
+}
+.insight-section {
+    margin-inline: 40px;
+    margin-block: 40px;
+}
+.each-insight-div {
+    border-right: 1px solid #d4d4d8;
+}
+
+.supply-card {
+    padding-top: 40px;
+}
+.datapre-div {
+    margin-inline: 50px;
+    padding-inline: 50px;
+    margin-bottom: 100px;
+    margin-left: 120px;
+}
+.data-prep {
+    padding-inline: 50px;
+}
+.typo {
+    color: #a0a0a0;
+    font-size: 18px;
+}
+.typograph {
+    font-size: 20px;
+    font-weight: 700;
+}
+.valuable-insight-div {
+    background-color: #f2f2f2;
+    padding-top: 80px;
+    padding-inline: 40px;
+    padding-bottom: 40px;
+    margin-block: 120px;
+    margin-inline: 200px;
+    border-radius: 30px;
+    height: auto;
+
+}
+.valuable-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.valuable-img {
+    float: right;
+}
+.valuable-para {
+    margin-top: 30px;
+    font-size: 20px;
+}
+.valuable-btn {
+    margin-top: 40px;
+}
+.valuable-img-mobile {
+    display: none;
+}
+.trade-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trade-card-div {
+    padding-inline: 80px;
+    margin-block: 80px;
+}
+.trade-heading-div {
+    text-align: center;
+}
+.trade-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.letmeet-div {
+    margin-top: 150px;
+    padding-inline: 150px;
+    margin-bottom: 300px;
+}
+.letmeet-left-div {
+    border-right: 1px solid grey;
+    height: 80vh;
+    padding-right: 30px;
+}
+.letmeet-right-div {
+    height: 60vh;
+}
+.mobile-view-datalicense {
+    display: none;
+}
+.record-div {
+    font-weight: 500;
+    border: 1px solid #F7AA59;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 5px;
+    color: #F7AA59;
+}
+
+
+@media (max-width: 600px) {
+    .datalicense-header {
+        padding-top: 0;
+        padding-inline: 0;
+        margin-inline: 20px;
+    }
+    .first-datalicense-img {
+        display: none;
+    }
+    .second-datalicense-img {
+        display: flex;
+        margin-top: 40px;
+    }
+    .insight-section-heading {
+        padding-inline: 10px;
+    }
+    .supply-para {
+        margin-top: -30px;
+    }
+    .datapre-div {
+        margin-left: 40px;
+    }
+    .image-accor {
+        margin-left: 0;
+    }
+    .each-insight-div {
+        border-bottom: 1px solid #d4d4d8;
+        border-right: 0px solid #d4d4d8;
+    }
+    .typo {
+        font-size: 15px;
+    }
+    .typograph {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .datapre-div {
+        padding-inline: 0;
+        margin-top: 100px;
+        
+    }
+    .data-prep {
+        padding-inline: 10px;
+    }
+    .panel-div {
+        margin-top: -120px;
+        
+    }
+    .image-accor {
+        margin-top: 50px;
+    }
+    .supply-card {
+        padding-top: 0;
+    }
+    .valuable-insight-div {
+        margin-inline: 10px;
+        padding-top: 50px;
+    }
+    .valuable-img {
+        display: none;
+    }
+    .valuable-img-mobile {
+        display: flex;
+        margin-top: 40px;
+    }
+    .valuable-btn {
+        margin-top: 20px;
+    }
+    .valuable-insight-div {
+        border-radius: 20px;
+        padding-inline: 0;
+    }
+    .trade-heading-div {
+        padding-inline: 50px;
+    }
+    .letmeet-div {
+        margin-top: 100px;
+        padding-inline: 30px;
+    }
+    .letmeet-left-div {
+        display: none;
+    }
+    .desktop-view-datalicense {
+        display: none;
+    }
+    .mobile-view-datalicense {
+        display: flex;
+        margin-bottom: 50px;
+    }
+}

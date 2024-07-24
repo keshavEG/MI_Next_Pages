@@ -1,19 +1,75 @@
-'use client'
-import { button } from "@nextui-org/theme";
+'use client';
 import Image from "next/image";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { Row, Container, Col } from "react-bootstrap";
+import { data, images } from "@/constants/importExportData";
 
-
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function ImportExportData() {
-    const [displayText, setDisplayText] = useState('195+ Countries Trade Data');
-    const [activeButton, setActiveButton] = useState('ALL DATA');
+    const [activeButton, setActiveButton] = useState("ALL DATA");
+    const [expanded, setExpanded] = useState<string | false>("panel1");
 
-    const handleClick = (text: SetStateAction<string>, classcss: SetStateAction<string>) => {
-        console.log("Here is the data------> ", text)
-        setDisplayText(text);
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+            setExpanded(newExpanded ? panel : false);
+        };
+
+    const handleClick = (classcss: string) => {
         setActiveButton(classcss);
+    };
+
+    const renderContent = () => {
+        const activeData = data[activeButton];
+        return activeData.map((item, index) => (
+            <Col md={4} key={index}>
+                <div className="importExportDataDiv">
+                    <div>
+                        <Image width={24} height={24} alt="" loading="lazy" src={item.imageSrc} />
+                    </div>
+                    <p>{item.text}</p>
+                </div>
+            </Col>
+        ));
+    };
+
+    const renderAccordionContent = () => {
+        return Object.keys(data).map((key, index) => (
+            <Accordion
+                key={key}
+                expanded={expanded === `panel${index + 1}`}
+                onChange={handleChange(`panel${index + 1}`)}
+                sx={{ backgroundColor: "white" }}
+            >
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls={`panel${index + 1}bh-content`}
+                    id={`panel${index + 1}bh-header`}
+                >
+                    <Typography className="typograph" sx={{ flexShrink: 0 }}>
+                        {key.replace(/_/g, ' ')}
+                    </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Row>
+                        {data[key].map((item, idx) => (
+                            <Col md={4} key={idx}>
+                                <div className="importExportDataDiv">
+                                    <div>
+                                        <Image width={24} height={24} alt="" loading="lazy" src={item.imageSrc} />
+                                    </div>
+                                    <p>{item.text}</p>
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
+                </AccordionDetails>
+            </Accordion>
+        ));
     };
 
     return (
@@ -38,216 +94,39 @@ function ImportExportData() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col style={{ borderRight: '1px solid black' }} md={3}>
+                    <Col className="desktop-view" style={{ borderRight: "1px solid black" }} md={3}>
                         <div className="importexportbuttons">
-                            <button
-                                className={activeButton === 'ALL DATA' ? 'active' : ''}
-                                onClick={() => handleClick('ALL DATA', 'ALL DATA')}
-                            >
-                                ALL DATA
-                            </button>
-                            <button
-                                className={activeButton === 'DETAILED DATA' ? 'active' : ''}
-                                onClick={() => handleClick('DETAILED DATA', 'DETAILED DATA')}
-                            >
-                                DETAILED DATA
-                            </button>
-                            <button
-                                className={activeButton === 'STATISTICAL DATA' ? 'active' : ''}
-                                onClick={() => handleClick('STATISTICAL DATA', 'STATISTICAL DATA')}
-                            >
-                                STATISTICAL DATA
-                            </button>
-                            <button
-                                className={activeButton === 'MIRROR DATA' ? 'active' : ''}
-                                onClick={() => handleClick('MIRROR DATA', 'MIRROR DATA')}
-                            >
-                                MIRROR DATA
-                            </button>
-                            <button
-                                className={activeButton === 'BILL OF LADING' ? 'active' : ''}
-                                onClick={() => handleClick('BILL OF LADING', 'BILL OF LADING')}
-                            >
-                                BILL OF LADING
-                            </button>
-                            <button
-                                className={activeButton === 'SC BILL OF LADING' ? 'active' : ''}
-                                onClick={() => handleClick('SC BILL OF LADING', 'SC BILL OF LADING')}
-                            >
-                                SC BILL OF LADING
-                            </button>
-                            <button
-                                className={activeButton === 'TRANSIT DATA' ? 'active' : ''}
-                                onClick={() => handleClick('TRANSIT DATA', 'TRANSIT DATA')}
-                            >
-                                TRANSIT DATA
-                            </button>
-                            <button
-                                className={activeButton === 'CARGO BL DATA' ? 'active' : ''}
-                                onClick={() => handleClick('CARGO BL DATA', 'CARGO BL DATA')}
-                            >
-                                CARGO BL DATA
-                            </button>
+                            {Object.keys(data).map((key) => (
+                                <button
+                                    key={key}
+                                    className={activeButton === key ? "active" : ""}
+                                    onClick={() => handleClick(key)}
+                                >
+                                    {key.replace(/_/g, ' ')}
+                                </button>
+                            ))}
                         </div>
                     </Col>
-                    <Col md={9}>
-
-
+                    <Col className="desktop-view" md={9}>
                         <div className="mapDiv">
-                            <img
-                                loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/83badc114813cc0ef53eeae33628f5ee69b4b8070ace3dd56ac004ee609b510f?"
-                                className="self-center max-w-full aspect-[1.85] w-[608px]"
-                            />
+                            <Image width={600} height={500} alt="" src={images[activeButton]} />
                             <div className="mt-7 max-md:max-w-full">
                                 <div className="gap-5 max-md:flex-col max-md:gap-0">
-
                                     <div>
-                                        <Row>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            loading="lazy"
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            loading="lazy"
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            loading="lazy"
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                            <Col md={4}>
-                                                <div className="importExportDataDiv">
-                                                    <div>
-                                                        <Image
-                                                            width={24}
-                                                            height={24}
-                                                            alt=""
-                                                            loading="lazy"
-                                                            src="/arrow.png"
-                                                        />
-                                                    </div>
-                                                    <p>{displayText}</p>
-                                                </div>
-                                            </Col>
-                                        </Row>
+                                        <Row>{renderContent()}</Row>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
+                    </Col>
 
+                    <Col className="mobile-view">
+                        <div>{renderAccordionContent()}</div>
                     </Col>
                 </Row>
-
-
             </Container>
         </div>
-    )
+    );
 }
 
-export default ImportExportData
+export default ImportExportData;

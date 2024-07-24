@@ -11,7 +11,7 @@ const stats = [
 
 export default function Platform_Globe() {
   return (
-    <div className="relative w-full h-screen bg-white overflow-hidden">
+    <div className=" py-10 relative w-full h-screen bg-white overflow-hidden">
       {/* Background image */}
       <Image
         src="/Product_Platform_Globe_bg.png"

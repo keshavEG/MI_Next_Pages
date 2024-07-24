@@ -40,7 +40,7 @@ function ScheduleDemo() {
                             <div className="text-base leading-8 text-black lowercase max-md:max-w-full">
                                 <span className="uppercase">G</span>et a comprehensive view of
                                 international trade between countries to set your
-                                businefsfsfsdfsdss in a particular direction and drive growth for
+                                business in a particular direction and drive growth for
                                 your business while keeping up to date with the latest
                                 information. Watch the video from Market Inside, providing its
                                 introduction with a quick glance at how our services help

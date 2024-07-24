@@ -6,7 +6,6 @@ import { Col, Row } from 'react-bootstrap'
 import { messages, articleMessages } from '@/constants'
 
 
-
 function Services() {
 
     const [activeLink, setActiveLink] = useState('importer');
@@ -19,59 +18,62 @@ function Services() {
     return (
         <div className='services-div'>
             <h1 className='services-heading'>Services</h1>
-            <p className='services-para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p className='services-para'>See how simplified, insightful, and intrusive global trade data can help you stay ahead of the competition, stay up-to-date with the worldwide market, and streamline operations. Market Inside offers unique trade data solutions to various sectors and industries.
+            </p>
+            <div className='mobile-view-service'>
 
-            <nav className="navbar">
-                <a
-                    // href="#importer"
-                    className={activeLink === 'importer' ? 'active' : ''}
-                    onClick={() => handleClick('importer')}
-                >
-                    Importer
-                </a>
-                <a
-                    // href="#exporter"
-                    className={activeLink === 'exporter' ? 'active' : ''}
-                    onClick={() => handleClick('exporter')}
-                >
-                    Exporter
-                </a>
-                <a
-                    // href="#logistics"
-                    className={activeLink === 'logistics' ? 'active' : ''}
-                    onClick={() => handleClick('logistics')}
-                >
-                    Logistics
-                </a>
-                <a
-                    // href="#law"
-                    className={activeLink === 'law firms' ? 'active' : ''}
-                    onClick={() => handleClick('law firms')}
-                >
-                    Law Firms
-                </a>
-                <a
-                    // href="#corporation"
-                    className={activeLink === 'corporation' ? 'active' : ''}
-                    onClick={() => handleClick('corporation')}
-                >
-                    Corporation
-                </a>
-                <a
-                    // href="#insurance"
-                    className={activeLink === 'insurance companies' ? 'active' : ''}
-                    onClick={() => handleClick('insurance companies')}
-                >
-                    Insurance Companies
-                </a>
-                <a
-                    // href="#research"
-                    className={activeLink === 'research & consulting' ? 'active' : ''}
-                    onClick={() => handleClick('research & consulting')}
-                >
-                    Research & Consulting
-                </a>
-            </nav>
+                <nav className="navbar">
+                    <a
+                        // href="#importer"
+                        className={activeLink === 'importer' ? 'active' : ''}
+                        onClick={() => handleClick('importer')}
+                    >
+                        Importer
+                    </a>
+                    <a
+                        // href="#exporter"
+                        className={activeLink === 'exporter' ? 'active' : ''}
+                        onClick={() => handleClick('exporter')}
+                    >
+                        Exporter
+                    </a>
+                    <a
+                        // href="#logistics"
+                        className={activeLink === 'logistics' ? 'active' : ''}
+                        onClick={() => handleClick('logistics')}
+                    >
+                        Logistics
+                    </a>
+                    <a
+                        // href="#law"
+                        className={activeLink === 'law firms' ? 'active' : ''}
+                        onClick={() => handleClick('law firms')}
+                    >
+                        Law Firms
+                    </a>
+                    <a
+                        // href="#corporation"
+                        className={activeLink === 'corporation' ? 'active' : ''}
+                        onClick={() => handleClick('corporation')}
+                    >
+                        Corporation
+                    </a>
+                    <a
+                        // href="#insurance"
+                        className={activeLink === 'insurance companies' ? 'active' : ''}
+                        onClick={() => handleClick('insurance companies')}
+                    >
+                        Insurance Companies
+                    </a>
+                    <a
+                        // href="#research"
+                        className={activeLink === 'research & consulting' ? 'active' : ''}
+                        onClick={() => handleClick('research & consulting')}
+                    >
+                        Research & Consulting
+                    </a>
+                </nav>
+            </div>
 
             <Row className='services-para-div'>
                 <Col>
@@ -92,7 +94,7 @@ function Services() {
                         ))}
                     </div>
                 </Col>
-                <Col>
+                <Col className='service-img-div'>
                     <div className='services-img'>
                         <Image src={
                             (activeLink === 'importer' ? '/importer.png' :

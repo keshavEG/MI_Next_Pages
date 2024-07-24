@@ -4,10 +4,11 @@ import React, { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuItem, 
+  NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import "./Navbar.module.css"
 
 const solutionsContent = {
   "Sales Enablement": {
@@ -69,105 +70,139 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:block">
-        <NavigationMenu>
+          <NavigationMenu>
             <NavigationMenuList className="flex space-x-6">
-            <NavigationMenu>
-              <NavigationMenuList className="flex space-x-6">
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Solutions</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[800px] p-6 bg-gray-900 shadow-lg rounded-md">
-                      <div className="flex">
-                        <div className="w-1/4 space-y-4 pr-6 border-r border-gray-700">
-                          {Object.keys(solutionsContent).map((key) => (
-                            <a
-                              key={key}
-                              href="#"
-                              className={`block p-2 rounded text-white ${
-                                selectedSolution === key ? "bg-gray-800 font-semibold" : "hover:bg-gray-800"
-                              }`}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setSelectedSolution(key);
-                              }}
-                            >
-                              {key}
-                            </a>
-                          ))}
-                        </div>
-                        <div className="w-3/4 pl-6">
-                          <h3 className="text-orange-500 text-xl font-bold mb-4">{solutionsContent[selectedSolution].title}</h3>
-                          <p className="text-white text-base mb-6">{solutionsContent[selectedSolution].description}</p>
-                          <div className="grid grid-cols-2 gap-6">
-                            {solutionsContent[selectedSolution].sections.map((section, index) => (
-                              <div key={index}>
-                                <h4 className="text-orange-500 font-semibold mb-2">{section.title}</h4>
-                                <p className="text-white text-sm">{section.content}</p>
-                              </div>
+              <NavigationMenu>
+                <NavigationMenuList className="flex space-x-6">
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Solutions</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="w-[800px] p-6 bg-gray-900 shadow-lg rounded-md">
+                        <div className="flex">
+                          <div className="w-1/4 space-y-4 pr-6 border-r border-gray-700">
+                            {Object.keys(solutionsContent).map((key) => (
+                              <a
+                                key={key}
+                                href="#"
+                                className={`block p-2 rounded text-white ${selectedSolution === key ? "bg-gray-800 font-semibold" : "hover:bg-gray-800"
+                                  }`}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setSelectedSolution(key);
+                                }}
+                              >
+                                {key}
+                              </a>
                             ))}
                           </div>
+                          <div className="w-3/4 pl-6">
+                            <h3 className="text-orange-500 text-xl font-bold mb-4">{solutionsContent[selectedSolution].title}</h3>
+                            <p className="text-white text-base mb-6">{solutionsContent[selectedSolution].description}</p>
+                            <div className="grid grid-cols-2 gap-6">
+                              {solutionsContent[selectedSolution].sections.map((section, index) => (
+                                <div key={index}>
+                                  <h4 className="text-orange-500 font-semibold mb-2">{section.title}</h4>
+                                  <p className="text-white text-sm">{section.content}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Product</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[750px] p-6 bg-gray-900 shadow-lg rounded-md">
-                      <div className="grid grid-cols-3 gap-6">
-                        <div className="bg-black p-6 rounded-md">
-                          <h3 className="text-orange-500 text-xl font-bold mb-3">Platform</h3>
-                          <p className="text-white text-sm mb-4">Our comprehensive data platform for international trade insights.</p>
-                          <div className="bg-gray-800 h-20 w-20 rounded-md flex items-center justify-center mb-4">
-                            <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Product</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="w-[750px] p-6 bg-gray-900 shadow-lg rounded-md">
+                        <div className="grid grid-cols-3 gap-6">
+                          <div className="bg-black p-6 rounded-md">
+                            <h3 className="text-orange-500 text-xl font-bold mb-3">Platform</h3>
+                            <p className="text-white text-sm mb-4">Our comprehensive data platform for international trade insights.</p>
+                            <div className="bg-gray-800 h-20 w-20 rounded-md flex items-center justify-center mb-4">
+                              <svg className="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                            </div>
+                            <ul className="text-white text-sm space-y-2">
+                              <li>• Real-time data updates</li>
+                              <li>• Advanced analytics tools</li>
+                              <li>• Customizable dashboards</li>
+                            </ul>
                           </div>
-                          <ul className="text-white text-sm space-y-2">
-                            <li>• Real-time data updates</li>
-                            <li>• Advanced analytics tools</li>
-                            <li>• Customizable dashboards</li>
-                          </ul>
-                        </div>
-                        <div className="bg-black p-6 rounded-md">
-                          <h3 className="text-orange-500 text-xl font-bold mb-3">API</h3>
-                          <p className="text-white text-sm mb-4">Integrate our powerful data directly into your applications.</p>
-                          <div className="bg-gray-800 h-20 w-20 rounded-md flex items-center justify-center mb-4">
-                            <span className="text-orange-500 text-4xl">&#9668;&#9658;</span>
+                          <div className="bg-black p-6 rounded-md">
+                            <h3 className="text-orange-500 text-xl font-bold mb-3">API</h3>
+                            <p className="text-white text-sm mb-4">Integrate our powerful data directly into your applications.</p>
+                            <div className="bg-gray-800 h-20 w-20 rounded-md flex items-center justify-center mb-4">
+                              <span className="text-orange-500 text-4xl">&#9668;&#9658;</span>
+                            </div>
+                            <ul className="text-white text-sm space-y-2">
+                              <li>• RESTful API</li>
+                              <li>• Comprehensive documentation</li>
+                              <li>• Flexible data formats</li>
+                            </ul>
                           </div>
-                          <ul className="text-white text-sm space-y-2">
-                            <li>• RESTful API</li>
-                            <li>• Comprehensive documentation</li>
-                            <li>• Flexible data formats</li>
-                          </ul>
-                        </div>
-                        <div className="bg-black p-6 rounded-md">
-                          <h3 className="text-orange-500 text-xl font-bold mb-3">Data License</h3>
-                          <p className="text-white text-sm mb-4">Full access to our extensive trade database for your organization.</p>
-                          <div className="bg-gray-800 h-20 w-20 rounded-md flex items-center justify-center mb-4">
-                            <span className="text-white text-4xl font-bold">A</span>
+                          <div className="bg-black p-6 rounded-md">
+                            <h3 className="text-orange-500 text-xl font-bold mb-3">Data License</h3>
+                            <p className="text-white text-sm mb-4">Full access to our extensive trade database for your organization.</p>
+                            <div className="bg-gray-800 h-20 w-20 rounded-md flex items-center justify-center mb-4">
+                              <span className="text-white text-4xl font-bold">A</span>
+                            </div>
+                            <ul className="text-white text-sm space-y-2">
+                              <li>• Comprehensive data sets</li>
+                              <li>• Regular updates</li>
+                              <li>• Customizable data feeds</li>
+                            </ul>
                           </div>
-                          <ul className="text-white text-sm space-y-2">
-                            <li>• Comprehensive data sets</li>
-                            <li>• Regular updates</li>
-                            <li>• Customizable data feeds</li>
-                          </ul>
                         </div>
                       </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-    
-                <NavigationMenuItem>
-                  <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Data</a>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Plan</a>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Research & Insights</a>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem className="abc">
+                    <a
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      href="#"
+                      className="navbar-links uppercase text-sm font-semibold transition-colors"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'black'}
+                    >
+                      Data
+                    </a>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem className="abc">
+                    <a
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      href="#"
+                      className="navbar-links uppercase text-sm font-semibold transition-colors"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'black'}
+                    >
+                      Plans
+                    </a>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem>
+                    <a
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      href="#"
+                      className="navbar-links uppercase text-sm font-semibold transition-colors"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'black'}
+                    >
+                      Research & Insights
+                    </a>
+                  </NavigationMenuItem>
+                  {/* <NavigationMenuItem>
+                    <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Plan</a>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <a href="#" className="navbar-links uppercase text-sm font-semibold hover:text-orange-500 transition-colors">Research & Insights</a>
+                  </NavigationMenuItem> */}
+                  {/* <a className="navbar-links" href="#" >Data</a>
+                <a className="navbar-links" href="#" >Plans</a>
+                <a className="navbar-links" href="#" >Research & Insights</a> */}
+                </NavigationMenuList>
+              </NavigationMenu>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -203,7 +238,8 @@ export default function Navbar() {
             {mobileSubmenuOpen === "solutions" && (
               <div className="pl-4">
                 {Object.keys(solutionsContent).map((key) => (
-                  <a key={key} href="#" className="block py-2 text-sm">
+                  <a style={{ textDecoration: 'none', color: 'white' }} key={key} href="#" className="block py-2 text-sm" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
                     {key}
                   </a>
                 ))}
@@ -215,14 +251,21 @@ export default function Navbar() {
             </button>
             {mobileSubmenuOpen === "product" && (
               <div className="pl-4">
-                <a href="#" className="block py-2 text-sm">Platform</a>
-                <a href="#" className="block py-2 text-sm">API</a>
-                <a href="#" className="block py-2 text-sm">Data License</a>
+                <a style={{ textDecoration: 'none', color: 'white' }} href="#" className="block py-2 text-sm" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>Platform</a>
+                <a style={{ textDecoration: 'none', color: 'white' }} href="#" className="block py-2 text-sm" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>API</a>
+                <a style={{ textDecoration: 'none', color: 'white' }} href="#" className="block py-2 text-sm" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>Data License</a>
               </div>
             )}
-            <a href="#" className="block py-2">DATA</a>
-            <a href="#" className="block py-2">PLAN</a>
-            <a href="#" className="block py-2">RESEARCH & INSIGHTS</a>
+            <a style={{ textDecoration: 'none', color: 'white' }} href="#" className="block py-2" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+            >DATA</a>
+            <a style={{ textDecoration: 'none', color: 'white' }} href="#" className="block py-2" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>PLAN</a>
+            <a style={{ textDecoration: 'none', color: 'white' }} href="#" className="block py-2" onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>RESEARCH & INSIGHTS</a>
           </div>
           <div className="px-4 py-2 flex flex-col space-y-2">
             <button className="py-2 px-4 bg-black text-white text-sm uppercase font-bold rounded hover:bg-gray-800 transition-colors">
