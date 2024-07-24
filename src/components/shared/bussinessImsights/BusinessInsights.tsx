@@ -14,8 +14,9 @@ export const BusinessInsights: React.FC<BusinessInsightsProps> = ({ backgroundIm
 
   // Extract the last part of the url
   const currentPath = pathname.split("/").pop();
+  console.log("This is the router ----> ", pathname)
 
-  const { title, subtitle } = headings[currentPath] || headings["default"];
+  const { title, subtitle } = headings[pathname] || headings["default"];
 
   return (
     <section style={{ background: "#f1f2f5" }} className="flex flex-col justify-center font-bold text-black uppercase leading-[120%]">

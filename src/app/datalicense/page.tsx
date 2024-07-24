@@ -8,6 +8,7 @@ import HowDataIsPrepared from '@/components/data-license/HowDataIsPrepared'
 import ValuableInsight from '@/components/data-license/ValuableInsight'
 import { TradeAnalytics } from '@/components/research-report/TradeAnalytics'
 import Letsmeet from '@/components/data-license/Letsmeet'
+import { BusinessInsights } from '@/components/shared/bussinessImsights/BusinessInsights'
 
 
 const DataLicense = () => {
@@ -19,6 +20,7 @@ const DataLicense = () => {
             <TradeAnalytics />
             <Letsmeet />
             <ValuableInsight />
+            <BusinessInsights backgroundImageSrc={''} />
         </div>
 
     )

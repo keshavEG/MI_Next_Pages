@@ -86,10 +86,26 @@
 .letmeet-div {
     margin-top: 150px;
     padding-inline: 150px;
+    margin-bottom: 300px;
 }
 .letmeet-left-div {
     border-right: 1px solid grey;
     height: 80vh;
+    padding-right: 30px;
+}
+.letmeet-right-div {
+    height: 60vh;
+}
+.mobile-view-datalicense {
+    display: none;
+}
+.record-div {
+    font-weight: 500;
+    border: 1px solid #F7AA59;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 5px;
+    color: #F7AA59;
 }
 
 
@@ -174,5 +190,12 @@
     }
     .letmeet-left-div {
         display: none;
+    }
+    .desktop-view-datalicense {
+        display: none;
+    }
+    .mobile-view-datalicense {
+        display: flex;
+        margin-bottom: 50px;
     }
 }

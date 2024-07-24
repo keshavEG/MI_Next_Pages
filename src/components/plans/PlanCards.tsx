@@ -3,10 +3,11 @@ import { useData } from '@/context/store'
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
+import RequestDemo from './RequestDemo'
 
 const PlanCards = () => {
-    const [activeButton, setActiveButton] = useState<string | null>(null);
-    const { country, setCountry } = useData();
+    const [activeButton, setActiveButton] = useState<string | null>("global");
+    const { setCountry } = useData("global");
 
     const handleButtonClick = (buttonId: string) => {
         setActiveButton(buttonId);
@@ -26,13 +27,14 @@ const PlanCards = () => {
                                 <p className='country-para'>Thailand, Indonesia, Turkey, Singapore, Bangladesh, India, Russia, Pakistan, Philippines, Sri Lanka, Vietnam, Kazakhstan, Ukraine, Uzbekistan</p>
                             </div>
                             <div className='sub-headings'>
-                                <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>05</span> Exclusive Countries Covered</h4>
+                                <h4 className='sub-heading-para'><span style={{ color: '#FB923C', fontWeight: '700' }}>05</span> Exclusive Countries Covered</h4>
                                 <h4 className='sub-heading-para'>Additional Data Types Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>45</span> Countries Mirror Customs Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>36</span> Countries Suez Canal Bill of Lading Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>48</span> Countries Transit Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-first'>
-                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
+                                    {/* <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a> */}
+                                    <RequestDemo title="Asia" />
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "asia" ? "#f8992f" : "grey"}`,
                                         color: 'white',
@@ -58,7 +60,8 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>21</span> Countries Suez Canal Bill of Lading Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>53</span> Countries Transit Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-second'>
-                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
+                                    {/* <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a> */}
+                                    <RequestDemo title="Africa" />
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "africa" ? "#f8992f" : "grey"}`,
                                         color: 'white',
@@ -85,7 +88,8 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>16</span> Countries Suez Canal Bill of Lading Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>31</span> Countries Transit Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-third'>
-                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
+                                    {/* <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a> */}
+                                    <RequestDemo title="America" />
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "america" ? "#f8992f" : "grey"}`,
                                         color: 'white',
@@ -113,7 +117,8 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>50</span> Countries Transit Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>28</span> Countries Statistical Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-forth'>
-                                    <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
+                                    {/* <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a> */}
+                                    <RequestDemo title="Europe" />
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "europe" ? "#f8992f" : "grey"}`,
                                         color: 'white',
@@ -141,7 +146,8 @@ const PlanCards = () => {
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>193</span> Countries Transit Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>33</span> Countries Statistical Data Covered</h4>
                                 <div className='plancard-btn plancard-btn-fifth'>
-                                <a style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }} href='#'>Request A Demo</a>
+                                    {/* <p style={{ textDecoration: 'none', textTransform: 'uppercase', color: '#fb923c', marginBottom: '10px' }}>Request A Demo</p> */}
+                                    <RequestDemo title="Global" />
                                     <Button size='small' className='valuable-btn' variant="contained" sx={{
                                         backgroundColor: `${activeButton === "global" ? "#f8992f" : "grey"}`,
                                         color: 'white',
