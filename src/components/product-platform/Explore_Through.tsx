@@ -1,51 +1,51 @@
+"use client"
 import React from 'react';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 
-export default function Explore_Through() {
+export default function ExploreThroughWideDatabase() {
   return (
-    <div className="flex flex-col items-center pb-3.5 w-full bg-orange-400 rounded-full">
-      <div className="flex flex-col items-center px-16 pb-20 rounded-full bg-neutral-50 w-full max-md:px-5">
-        <div className="flex flex-col items-center mb-4 w-full text-center">
-          <div className="flex gap-5 w-full max-md:flex-col max-md:gap-0 items-center justify-center">
-            <div className="flex flex-col w-[24%] max-md:w-full items-center">
-              <div className="mt-72 text-6xl font-bold text-black uppercase leading-[66px] max-md:mt-10 max-md:text-4xl max-md:leading-[53px]">
-                Explore Through A Wide Database!
-
-                <div className="flex justify-center items-start px-5 py-3 max-w-full text-sm font-bold leading-4 uppercase bg-white rounded-md border border-solid border-zinc-400 text-stone-300 w-[287px] max-md:w-full">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="bg-transparent focus:outline-none w-full"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="justify-center px-6 py-3 mt-5 text-sm font-bold leading-4 text-white uppercase rounded-md bg-stone-500 max-md:px-5"
-                >
-                  Free Trial
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col w-[76%] max-md:w-full items-center">
-              <div className="shrink-0 max-w-full rounded-full bg-neutral-200 h-[414px] w-[970px]" />
-            </div>
+    <div className="relative  bg-white overflow-hidden">
+      {/* Background shapes */}
+      <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gray-100 rounded-bl-[100%] z-0"></div>
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-50 rounded-tr-[100%] z-0"></div>
+      
+      {/* Main content */}
+      <div className="relative w-full max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-center justify-between z-10">
+        {/* Left column */}
+        <div className="w-full lg:w-1/2 flex flex-col items-start space-y-8 mb-12 lg:mb-0">
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
+            EXPLORE<br />THROUGH<br />A WIDE<br />DATABASE!
+          </h1>
+          <div className="w-full max-w-md">
+            <input
+              type="email"
+              placeholder="ENTER YOUR EMAIL"
+              className="w-full px-4 py-3 text-sm font-semibold uppercase bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+            />
           </div>
-          <div className="flex flex-col items-center w-full mt-5">
-            {/* <div className="flex justify-center items-start px-5 py-3 max-w-full text-sm font-bold leading-4 uppercase bg-white rounded-md border border-solid border-zinc-400 text-stone-300 w-[287px] max-md:w-full">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-transparent focus:outline-none w-full"
-              />
-            </div>
-            <button
-              type="submit"
-              className="justify-center px-6 py-3 mt-5 text-sm font-bold leading-4 text-white uppercase rounded-md bg-stone-500 max-md:px-5"
-            >
-              Free Trial
-            </button> */}
-          </div>
+          <button
+            type="submit"
+            className="px-8 py-3 text-sm font-bold text-white uppercase bg-gray-700 rounded-md hover:bg-gray-800 transition duration-300 shadow-md"
+          >
+            FREE TRIAL
+          </button>
+        </div>
+        
+        {/* Right column */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
+          <DotLottiePlayer
+            src="https://lottie.host/e05a8a1d-fa02-435e-af0a-0edcc0636f65/msaawEkbUo.json"
+            autoplay
+            loop
+            style={{ width: '100%', height: '100%', maxWidth: '600px', maxHeight: '600px' }}
+          />
         </div>
       </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-200 rounded-full opacity-50"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-orange-200 rounded-full opacity-50"></div>
     </div>
   );
 }

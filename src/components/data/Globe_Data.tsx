@@ -1,4 +1,7 @@
+"use client"
 import Image from "next/image";
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 
 export default function Globe_Data(){
     return(
@@ -20,14 +23,12 @@ export default function Globe_Data(){
         </div>
         <div className="flex flex-col w-[45%] max-md:w-full">
           <div className="relative w-full h-0 pb-[83.33%] max-md:pb-[125%]"> {/* Maintain aspect ratio */}
-            <Image
-              loading="lazy"
-              src="/globe_data.png"
-              alt="Globe"
-              layout="fill"
-              objectFit="cover"
-              className="w-full h-full max-md:mt-10"
-            />
+          <DotLottiePlayer
+            src="https://lottie.host/e05a8a1d-fa02-435e-af0a-0edcc0636f65/msaawEkbUo.json"
+            autoplay
+            loop
+            style={{ width: '100%', height: '100%', maxWidth: '600px', maxHeight: '600px' }}
+          />
           </div>
         </div>
       </div>

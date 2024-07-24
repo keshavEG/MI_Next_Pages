@@ -19,6 +19,9 @@ const config = {
     },
     extend: {
       colors: {
+        dimgray: {
+          300: '#A9A9A9', // Define your custom color value here
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

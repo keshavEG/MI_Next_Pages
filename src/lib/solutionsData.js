@@ -529,7 +529,304 @@ const getSolutionsData = () => {
           }
         ]
       }
+    },
+    {
+      id: "electronics",
+      video: {
+        videoSrcSet: "/importer_image.png",
+        title: "Electronics",
+        description: "Explore the vast opportunities of the electronic industry valued at more than 8 trillion dollars. Use our dashboard to find & connect with buyers and sellers and track shipment records based on HS code, product description, country, duration, etc. to diversify the supply chain across the region."
+      },
+      tabs: {
+        heading: "An Overview of Global Electronic Market ",
+        tabs: {
+          suppliers: {
+            title: "Market Analysis",
+            content: "Businesses across the globe can use our trade statistics to conduct an in-depth market analysis of top exporters and importers of electronic products. For instance, China, South Korea, America, Singapore, Germany, etc. are the top exporters. You can also identify emerging patterns and strategic decision-making for developing products.",
+            image: "/finding_supplier_image.png"
+          },
+          competitors: {
+            title: "Export-Import Data Analysis",
+            content: "Compare the monetary value of all exported and imported commodities across the globe with our trade Intelligent platform. Traders can get extensive data by using HS codes, country, product description, buyers' and sellers' details along with a multi-tier supply chain network. Implementing these features fosters the growth and development of business.",
+            image: "/tracking_activity_importer.jpg"
+          },
+          activity: {
+            title: "Growth Potential",
+            content: "Evaluate every step of business with our export-import data to increase growth. By keeping an eye on trade fluctuations, geographical development, trade disruption, and economic treaties between countries, companies can spot target areas of growth and expand their horizons.",
+            image: "/tracking_activity_importer.jpg"
+          }
+        }
+      },
+      insights: {
+        heading: "Product Wise Market Analysis",
+        carouselItems: [
+          {
+            image: "/electronics_importer.png",
+            title: "Electronics",
+            content: "Get the worldview of the market value of electronics and electrical machinery with the Market Inside dashboard. For instance, the total economic value of electronic goods increased from USD 5.6 trillion in 2020 to USD 7.2 trillion in 2022. Whereas, China (including Hong Kong) exported more than 1234.8 billion in 2023."
+          },
+          {
+            image: "/industrial_machinery_importer.png",
+            title: "Telephone Sets",
+            content: "The Market size of Telephone sets includes smartphones and other sets valued at more than USD 1.18 trillion in 2022. In 2023, China, including Hong Kong, dominated the export market with USD 273.8 billion, followed by the USA with USD 37.1 billion. As per data, this will increase to 800 billion by 2029."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Electrical Motors And Generator",
+            content: "Understand the trade pattern for electrical motors and generators with our trade data. Did you know? We checked the total trade value of goods in 2020 stood at USD 108.6 billion which increased to USD 135.3 billion in 2020 from our intelligent dashboard. USA and China became the top importers and exporters with 13 &14.4 billion USD in 2023."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Printed Circuits",
+            content: "Get up-to-date information on the demand and supply of goods related to printed circuits. If you analyze the trade from our global trade, then present statistics reveal the total market value. For instance, in 2022, the industry size was $121.5 billion and Asia secured the top export position."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: " Sound Record & Others",
+            content: "Amplify your growth and revenue in the Sound Record industry with comprehensive data on exports and imports. For instance, in 2020, the market value stood at USD 7.3 billion. China, Germany, and the Netherlands covered the largest export market share. On the other hand, Europe has become the top import market."
+          }
+        ]
+      },
+    },
+    {
+      id: "agro",
+      video: {
+        videoSrcSet: "/importer_image.png",
+        title: "Agro",
+        description: "Explore the worldwide trillion-dollar market of agro products with our industry-specific export-import data dashboard. Connect and strengthen with potential partners and get accurate records of shipments, based on product description, HS Code, etc. to ensure lasting growth."
+      },
+      tabs: {
+        heading: "Trade Intelligence: A way For Global Farm Producsts",
+        tabs: {
+          suppliers: {
+            title: "Trade Pattern Analysis",
+            content: "Businesses around the world can compare demand & supply patterns of the Agro-industry using parameters such as product description, HS code, country, total value, shipments, etc. For instance, the semiconductors and Lithium-Ion industry witnessed year-on-year growth.",
+            image: "/finding_supplier_image.png"
+          },
+          competitors: {
+            title: "Product Diversification",
+            content: "Expand your product portfolio beyond the boundaries to meet diverse market share with various products from across the regions, suppliers, buyers, and other parameters. Using this information, Using this information with our dashboard businesses can explore numerous ways to deal with numerous commodities.",
+            image: "/tracking_activity_importer.jpg"
+          },
+          activity: {
+            title: "Seasonal Trends",
+            content: "Our Global export-import data helps you understand seasonal variations in the overall economic value of commodities across different regions. Implementing these, businesses can frame their production schedules and marketing strategies as per top commodities.",
+            image: "/tracking_activity_importer.jpg"
+          }
+        }
+      },
+      insights: {
+        heading: "Fuel Agro Industry Growth With Data Driven Insights",
+        carouselItems: [
+          {
+            image: "/electronics_importer.png",
+            title: "Agricultural Product",
+            content: "Sow the seed of success with our comprehensive export-import data. For instance, in 2022, the market size of agricultural products stood at USD 4 trillion. In 2023, exports from the USA decreased by USD 20 billion, and for Brazil, it increased by USD 9 billion. In 2024, South Korea became the largest importer with USD 3.4 Billion."
+          },
+          {
+            image: "/industrial_machinery_importer.png",
+            title: "Soy Beans",
+            content: "Simplify trade patterns and increase your production line with nutrient-packed ingredients with Market Inside data. Using our data, businesses can search the total product value. Did you know? In 2022 it stood at USD 192.54 billion! USA and China, become the largest exporter and importer with 27.8 and 60.35 billion USD in 2023."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Wheat & Meslin ",
+            content: "Tap the golden grain opportunity with our detailed global data on wheat export and import. Did you know in 2022, the total wheat market size was more than 115.3 billion? At present, Indonesia and Canada dominate the export-import market with 3,755 and 7,007 million USD respectively."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Maize ",
+            content: "Get in-depth trade information from the field to the global economic value of maize with Market Inside data. For instance, in 2022, the global market size for maize crossed USD 122.1 billion. In 2023, Brazil dominated the maize industry with 13.4 billion, China became the lucrative place for Importers with USD 8.9 billion."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Coffee (All Types)",
+            content: "Find the ideal prospect for the rich aroma of coffee with our detailed trade data. For instance, the market valuation of the coffee industry in 2022 crossed the mark of USD 91 billion. The USA and Brazil dominated the Import-Export market with 8 and 7.2 billion USD respectively for coffee in 2023."
+          }
+        ]
+      },
+    },
+    {
+      id: "plastic",
+      video: {
+        videoSrcSet: "/importer_image.png",
+        title: "Plastic",
+        description: "Dive into the exponential growth of the Plastic industry which stood at $712 billion, in 2023. Explore the demand and supply trends, and anticipate the plastic market forecast which is set to cross the mark of 1050 billion by 2033. Navigate the top importing and exporting countries with company profiles, and expand your plastic business and 2x it’s growth."
+      },
+      tabs: {
+        heading: "Tap to go Global with Plastic Industry Insights",
+        tabs: {
+          suppliers: {
+            title: "Top Export & Importer",
+            content: "Expand and improve your business with Market Inside list of top exporters and importers for plastic shipment records, product descriptions, country, and other information. For instance, China, the USA, and Germany are the largest exporters.",
+            image: "/finding_supplier_image.png"
+          },
+          competitors: {
+            title: "Companies Overview",
+            content: "Learn about companies’ operations based on plastic, their business turnovers, strategic partners, countries where they export and import, ports, and other information with our detailed data on international trade. Use this information for constructive policies.",
+            image: "/tracking_activity_importer.jpg"
+          },
+          activity: {
+            title: "Supply Chain Network",
+            content: "Make your supply chain network business-oriented with the help of Market Inside data on export-import goods. Discover the best logistics solutions for your company by comparing the cost of goods with various suppliers based on HS codes, product descriptions, suppliers, etc.",
+            image: "/tracking_activity_importer.jpg"
+          }
+        }
+      },
+      insights: {
+        heading: "Tap The Potential Of Plastic Industry",
+        carouselItems: [
+          {
+            image: "/electronics_importer.png",
+            title: "Plastic And Articles",
+            content: "Using the Global import-export data, understand the market share of the plastic industry. The value increased from USD 1.22 trillion in 2020 to 1.65 trillion in 2022. The USA and China dominate the export and import market worldwide in 2023. By 2025, market value is expected to increase to USD 1.5-2 trillion."
+          },
+          {
+            image: "/industrial_machinery_importer.png",
+            title: "Polyamides",
+            content: "The total market value for Polyamides increased from USD 25.3 billion in 2020 to USD 39 billion in 2022. In 2023, China and Germany became the top importing countries with 1817 million and 1703 million respectively, and for the export market, the USA stood at the top with USD 2.6 billion. "
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Silicones",
+            content: "Tap to explore the worldwide opportunities of the Silicon industry with our global export-import trade data. In 2018, the market value increased from USD 15.1 billion to USD 20.5 billion in 2022. In 2023, China became the largest importer with USD 785.4 billion, and the USA- largest exporter with USD 1.4 billion."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Polymers of Ethylene ( Primary Forms)",
+            content: "In 2022, the total global value stood at USD 216 billion. Recently, South Korea and Brazil became the largest exporters and importers with USD 481.8 and USD 234 million in the first month of 2024 respectively. From Europe Switzerland and Norway are the top importing countries with 20.7 and 15 million USD respectively."
+          },
+          {
+            image: "/industrial_machinery_importer.png",
+            title: "Polyamides",
+            content: "The total market value for Polyamides increased from USD 25.3 billion in 2020 to USD 39 billion in 2022. In 2023, China and Germany became the top importing countries with 1817 million and 1703 million respectively, and for the export market, the USA stood at the top with USD 2.6 billion. "
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Silicones",
+            content: "Tap to explore the worldwide opportunities of the Silicon industry with our global export-import trade data. In 2018, the market value increased from USD 15.1 billion to USD 20.5 billion in 2022. In 2023, China became the largest importer with USD 785.4 billion, and the USA- largest exporter with USD 1.4 billion."
+          }
+        ]
+      },
+    },
+    {
+      id: "mining",
+      video: {
+        videoSrcSet: "/importer_image.png",
+        title: "Mining & Metals",
+        description: "Dive into rising business opportunities with the mining and metal industry, and identify the potential region for export and import. As per Market Inside data, the mining and metal industry is expected to increase by $2.2 trillion in 2024, and for metal will grow to $18.4 trillion by 2030."
+      },
+      tabs: {
+        heading: "Expand Mining & Metal Business With Trade Data",
+        tabs: {
+          suppliers: {
+            title: "Market Potential",
+            content: "Make your business more productive with booming global mining and metal industry demand. Market Inside offers authentic country data, dynamics of demand & supply, and complex market conditions that will help your business become robust amidst the competitive business environment.",
+            image: "/finding_supplier_image.png"
+          },
+          competitors: {
+            title: "Industry Insights",
+            content: "Gain a deeper understanding of the mining and metal market and remain top in the industry with detailed market analysis with trade data intelligence. Find the essential metal, potential price fluctuations, goods trends, and top buyers and sellers to maximize the profits.",
+            image: "/tracking_activity_importer.jpg"
+          },
+          activity: {
+            title: "Market Intelligence",
+            content: "Explore the power of export and import stats with trade data Intelligence to sustain lasting business growth. Connect with top companies to build strategic partnerships, identify potential customers, and suppliers, and strengthen market presence by securing the top position in the competitive environment.",
+            image: "/tracking_activity_importer.jpg"
+          }
+        }
+      },
+      insights: {
+        heading: "Metal and Mining Industry - An Opportunity to Expand",
+        carouselItems: [
+          {
+            image: "/electronics_importer.png",
+            title: "Iron And Steel ",
+            content: "Strengthen your business reach in the $1.8 trillion market size of the Iron and steel industry. Use the Market Inside dashboard to discover trade with top countries and companies. For instance, China, Germany, Japan, South Korea, and Indonesia are the top exporters in 2023. "
+          },
+          {
+            image: "/industrial_machinery_importer.png",
+            title: "Precious Metal",
+            content: "In a highly dynamic market, the value of goods fluctuates every second. In times of economic uncertainty, precious metals, such as gold, silver, platinum, and Palladium become safe haven assets. Switzerland exports more than $106 billion worth of gold to the world, whereas China, is the leading gold producer."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Industrial Minerals",
+            content: "The Global trade of industrial minerals is too diverse and reflects the needs of various sectors. This consists of non-metallic minerals such as gypsum, limestone, sand etc. essential for construction, agriculture and other activities. The US, Netherlands, Germany, and Belgium are the top exporters, and Singapore, Canada, China, Belgium, and the Netherlands leading importers, in 2023."
+          },
+          {
+            image: "/fuel_oil_importer.png",
+            title: "Minor Metals",
+            content: "Access essential minor metals such as lithium, cobalt, rare earth metals, and others market size with our trade data platform to perform the next generation of technology. Connect with global buyers who seek your valuable resources."
+          },
+          {
+            image: "/industrial_machinery_importer.png",
+            title: "Ferro Alloy",
+            content: "Discover top buyers and sellers for ferro alloy products to expand the business beyond the boundaries. For instance, Indonesia, South Africa, Brazile, India, and Kazakhstan, are key exporters in 2023. On the other hand, China imported $22.4 billion worth of ferroalloy from the world. The market is expected to grow $204 billion by 2030 with an approximate 5.6% growth rate."
+          }
+        ]
+      },
+    },
+    {
+      id: "research",
+      video: {
+        videoSrcSet: "/importer_image.png",
+        title: "Research",
+        description: "Our world’s largest trade data platform offers well-structured export and import data from diverse fields. International institutions, agencies, trade associations, and trade blocks can check the demand and supply trends using HS codes, product descriptions, etc. to understand and forecast the global economic trend."
+      },
+      tabs: {
+        heading: "Accelerate Research Work With Global Market Trends!",
+        tabs: {
+          suppliers: {
+            title: "Market Analysis and Forecasting",
+            content: "Researchers can utilize trade data for getting in-depth global trade analysis on market trends. Analyzing the demand and supply of diverse products, the market value, quantities, and shipments from a particular region or a port, using HS codes, and product description, enables them to make forecast reports, goods analyses, etc. ",
+            image: "/finding_supplier_image.png"
+          },
+          competitors: {
+            title: "Demand and Supply Trends",
+            content: "To make research work hassle-free, Market Inside offers weekly, monthly, quarterly, and annual trade data that allows researchers to see potential areas for downfall or rise in commodities export and import. They can utilize this data to curate reports on consumption patterns, resource allocation, exploitation of resources, etc. to enhance the credibility and fining of their research work.",
+            image: "/tracking_activity_importer.jpg"
+          },
+          activity: {
+            title: "Extensive Commodity Analysis",
+            content: "Analysis of specific products for market forecast by examining the trade volume, quantities, origin and destination country, price fluctuations. Using these insights, research can frame comprehensive reports on potential trade disruption, supply chain analysis, products movement, port activities, shipment trends and many more.",
+            image: "/tracking_activity_importer.jpg"
+          }
+        }
+      },
+      cards: {
+        heading: "Elevate Research With Global Trade Data",
+        items: [
+          {
+            title: "Agricultural Trade Dynamics",
+            content: "Discover agricultural commodities trends using product description, HS codes, countries that help research fellows in policies formulation to support farmers, sustainable farming by utilizing Market Inside product specific data. For instance, USA agricultural export commodities fell by $20 billion in 2023, whereas Brazil and Netherlands exports rose by $10 and $17 billion in the same period.",
+            imageSrc: "/industrial_machinery_insights.png"
+          },
+          {
+            title: "Global Health",
+            content: "With our insightful data, researchers can work on their reports for possible disease outbreaks, shortage of critical medical equipment and drugs in specific regions, movement of medical supplies by analyzing the export and import trade data. Furthermore, they can develop strategies to contain outbreaks, like, Ebola, SARS, COVID, etc. ",
+            imageSrc: "/electronics_insights.png"
+          },
+          {
+            title: "Climate Change & Global Warming",
+            content: "Researchers can keep a check on the movement of goods across the regions and the possible environmental impact with our global export and import data. They can identify the opportunities for sustainable development. For instance, by accessing data on crude oil and coal imports, researchers can scrutinize a country's dependency on fossil fuels and duly formulate policies towards clean energy.",
+            imageSrc: "/fuel_oil_importer_alt.png"
+          },
+          {
+            title: "Supply Chain Management",
+            content: "The study of data on shipment records, goods quantities, annual traffic, port of loading and unloading, and goods value helps to understand the most efficient trade routes. This information can be used to assess the country’s need for developing new ports, trade routes, new export hubs, etc. for seamless connectivity.",
+            imageSrc: "/pharma_alt.png"
+          },
+          {
+            title: "Technology & Innovation",
+            content: "New emerging technologies are the backbone of the global economy, and researchers or scholars can use trade data to forecast new and emerging technologies. For instance, the launching of 5G, increased the worldwide demand for semiconductors, innovation in Lithium-ion batteries led to a surge in electrical vehicles, etc. Researchers can use our trade data to develop comprehensive reports.",
+            imageSrc: "/others_insights.png"
+          }
+        ]
+      }
     }
+
+
     // Add more solutions as needed
   ];
 };

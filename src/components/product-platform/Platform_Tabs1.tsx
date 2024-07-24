@@ -1,13 +1,25 @@
 'use client'
 
-import { useRef, useEffect, Fragment } from 'react'
+import { useRef, useEffect, Fragment , useState } from 'react'
 import Image from 'next/image'
 import { Tab } from '@headlessui/react'
 import { Transition } from '@headlessui/react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import  UseEmblaCarousel   from 'embla-carousel-react'
 
 export default function PlatformTabs() {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [emblaRef, emblaApi] = UseEmblaCarousel({ loop: true })
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('select', () => {
+        setSelectedIndex(emblaApi.selectedScrollSnap())
+      })
+    }
+  }, [emblaApi])
+
   const tabs = [
     {
       title: 'SOURCING',
@@ -75,16 +87,22 @@ export default function PlatformTabs() {
             </div>
 
             <div className="block md:hidden w-full bg-black">
-              <Carousel >
-                <CarouselContent style={{textAlign:'center' }} className="flex justify-center items-center py-4 text-sm font-semibold text-white uppercase">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <Carousel ref={emblaRef} className="py-4">
+                <CarouselContent>
                   {tabs.map((tab, index) => (
                     <CarouselItem key={index}>
-                      <button
-                        className={`focus:outline-none transition-colors duration-150 ease-in-out text-center 
-                          ${selectedIndex === index ? 'text-orange-400' : 'text-white hover:text-orange-400'}`}
-                      >
-                        {tab.title}
-                      </button>
+                      <Tab as={Fragment}>
+                        {({ selected }) => (
+                          <button
+                            className={`focus:outline-none transition-colors duration-150 ease-in-out text-center w-full text-sm font-semibold uppercase
+                              ${selected ? 'text-orange-400' : 'text-white hover:text-orange-400'}`}
+                            onClick={() => emblaApi.scrollTo(index)}
+                          >
+                            {tab.title}
+                          </button>
+                        )}
+                      </Tab>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
@@ -92,6 +110,7 @@ export default function PlatformTabs() {
                 <CarouselNext className="text-white absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-black bg-opacity-50 rounded-full">Next</CarouselNext>
               </Carousel>
             </div>
+          </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
               <Tab.Panels>
@@ -128,9 +147,9 @@ export default function PlatformTabs() {
                             <Image
                               src={tab.img}
                               alt={tab.title}
-                              width={800}
-                              height={650}
-                              className="w-full h-auto rounded-lg shadow-xl"
+                              width={300}  // Further reduced from 400
+                              height={275} // Adjusted to maintain aspect ratio
+                              className="w-full h-auto rounded-lg shadow-xl max-w-xs mx-auto" // Changed max-width to max-w-xs
                             />
                           </div>
                         </div>
