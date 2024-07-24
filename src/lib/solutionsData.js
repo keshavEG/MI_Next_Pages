@@ -3,6 +3,7 @@ const getSolutionsData = () => {
   return [
     {
       id: "importer",
+      categories: ["industry"],
       video: {
         videoSrcSet: "/importer_image.png",
         title: "Importer",
@@ -88,6 +89,7 @@ const getSolutionsData = () => {
     },
     {
       id: "exporter",
+      categories: ["industry"],
       video: {
         videoSrcSet: "/importer_image.png",
         title: "Exporter",
@@ -173,6 +175,7 @@ const getSolutionsData = () => {
     },
     {
       id: "academic-institutions",
+      categories: ["industry"],
       heading: "Transforming Education With Global Trade Insights",
       video: {
         videoSrcSet: "/importer_image.png",
@@ -232,6 +235,7 @@ const getSolutionsData = () => {
     },
     {
       id: "logistics",
+      categories: ["industry"],
       video: {
         videoSrcSet: "/importer_image.png",
         title: "Logistics",
@@ -295,6 +299,7 @@ const getSolutionsData = () => {
     },
     {
       id: "corporate",
+      categories: ["industry"],
       video: {
         videoSrcSet: "/importer_image.png",
         title: "Corporate",
@@ -358,6 +363,7 @@ const getSolutionsData = () => {
     },
     {
       id: "chemical",
+      categories: ["usecase"],
       video: {
         videoSrcSet: "/importer_image.png",
         title: "Chemical",
