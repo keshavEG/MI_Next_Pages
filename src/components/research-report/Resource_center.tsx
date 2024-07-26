@@ -69,7 +69,7 @@ export default function Resource_Center() {
               width={800}
               height={536}
               alt="Resource Image"
-              className="grow w-full aspect-[1.49] max-md:mt-6 max-md:max-w-full rounded-lg shadow-md"
+              className="grow w-full aspect-[1.49] max-md:mt-6 max-md:max-w-full"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
