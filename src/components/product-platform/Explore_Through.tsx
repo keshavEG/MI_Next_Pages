@@ -33,7 +33,7 @@ export default function ExploreThroughWideDatabase() {
         </div>
         
         {/* Right column */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center">
+        <div style={{ zIndex: "-1"}} className="w-full lg:w-1/2 flex justify-center items-center">
           <DotLottiePlayer
             src="https://lottie.host/e05a8a1d-fa02-435e-af0a-0edcc0636f65/msaawEkbUo.json"
             autoplay

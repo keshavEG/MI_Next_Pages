@@ -14,6 +14,7 @@ import getSolutionsData from '@/lib/solutionsData';
 import Video_Solutions_3 from '@/components/solutions_3/Video_Solutions_3';
 import Tabs_Desc_3 from '@/components/solutions_3/Tab_Desc_3';
 import InsightsCards_3 from '@/components/solutions_3/Insights_Cards_3';
+import "./solutions.css"
 
 export default function Solutions({ params }) {
   const [solutionData, setSolutionData] = useState(null);

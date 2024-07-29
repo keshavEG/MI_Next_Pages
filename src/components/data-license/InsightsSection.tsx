@@ -5,52 +5,52 @@ const InsightsSection: React.FC = () => {
         <div className='insight-section'>
             <section className="flex flex-col">
                 <h1 className="insight-section-heading justify-center self-center max-w-full text-3xl font-bold leading-10 text-center uppercase w-[882px] max-md:max-w-full">
-                    <span className="text-neutral-400">Industry-Insights Served Through Smart Global </span>
-                    <span className="text-black">Supply Chain Intelligence</span>
+                    {/* <span className="text-neutral-400">Industry-Insights Served Through Smart Global </span> */}
+                    <span className="text-black">How <span className="text-neutral-400">Data License </span>Work ?</span>
                 </h1>
                 <div className="supply-card flex flex-col justify-center px-9 mt-20 w-full bg-white border border-solid border-zinc-300 max-md:px-5 max-md:mt-10 max-md:max-w-full">
                     <div className="flex-wrap content-start px-px pb-8 max-md:max-w-full">
-                        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+                        <div className="custom-responsiv flex max-md:flex-col max-md:gap-0">
                             <div className="each-insight-div flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
-                                <div className="flex flex-col grow max-md:mt-10">
+                                <div className="innner-license-div flex flex-col grow max-md:mt-10">
                                     <h2 className="pr-5 justify-center text-xl font-semibold leading-6 text-black uppercase">
-                                        Gain Actionable Insights Into Global Trade
+                                    Select the Dataset You Need
                                     </h2>
                                     <p className="pr-5 mb-7 justify-center mt-7 text-base leading-7 text-neutral-500">
-                                        Obtain in-depth information on global imports and exports, and keep in touch with what's happening around the global supply chain.
+                                    Choose from a wide range of trade data licenses. Depending on your requirements, we offer data sets based on targeted regions, industries, ports, commodity-wise, etc.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="each-insight-div flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
-                                <div className="flex flex-col grow max-md:mt-10">
+                                <div className="innner-license-div flex flex-col grow max-md:mt-10">
                                     <h2 className="pr-5 justify-center text-xl font-semibold leading-6 text-black uppercase">
-                                        Conduct A Thorough & Smart Analysis
+                                    Choose File Format
                                     </h2>
                                     <p className="pr-5 mb-7 justify-center mt-7 text-base leading-7 text-neutral-500">
-                                        Cultivate analysis with raw data serving data specifications of different kinds namely country, HS Code, buyer, supplier, ports, and total values.
+                                    We provide data in all forms. You can opt for offline mode ( excel, CSV file) or via top cloud partners AWS, Snowflake.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="each-insight-div flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
-                                <div className="flex flex-col grow max-md:mt-10">
+                                <div className="innner-license-div flex flex-col grow max-md:mt-10">
                                     <h2 className="pr-5 justify-center text-xl font-semibold leading-6 text-black uppercase">
-                                        Tap Into The History of Supply Chains
+                                    Get Protected Datasets
                                     </h2>
                                     <p className="pr-5 mb-7 justify-center mt-7 text-base leading-7 text-neutral-500">
-                                        Access the historical data of the global supply chain dating back to the year 2010 and get a comprehensive view of the global markets.
+                                    The datasets provided will be secured in an encrypted format to seamlessly integrate with your analytical engine.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
-                                <div className="flex flex-col grow max-md:mt-10">
+                                <div className="innner-license-div flex flex-col grow max-md:mt-10">
                                     <h2 className="pr-5 justify-center text-xl font-semibold leading-6 text-black uppercase">
-                                        Easy Access To Data For A Lifetime
+                                    Take the Leverage of Data License
                                     </h2>
                                     <p className="pr-5 justify-center mt-7 text-base leading-7 text-neutral-500">
-                                        The conversion into the easy-to-use Excel format allows any user to utilise the acquired data whenever and wherever they want on any device.
+                                    There you go! Use the Data License and access the trade data in your system.
                                     </p>
                                 </div>
                             </div>

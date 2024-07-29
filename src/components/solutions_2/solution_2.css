@@ -1,0 +1,12 @@
+.solution-three-div {
+    margin-inline: 150px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+    .solution-three-div {
+        margin-inline: 0;
+        margin-top: 0;
+    }
+}

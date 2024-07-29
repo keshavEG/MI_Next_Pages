@@ -1,0 +1,23 @@
+.research-div {
+    padding-inline: 150px;
+    margin-inline: 50px;
+}
+.Market_Inside_Blog-div {
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+.Market_Inside_Blog-heading {
+    font-size: 40px;
+}
+@media (max-width: 600px) {
+    .research-div {
+        padding-inline: 10px;
+        margin-inline: 0;
+    }
+    .Market_Inside_Blog-div {
+        margin-top: 100px;
+    }
+    .Market_Inside_Blog-heading {
+        font-size: 30px;
+    }
+}
