@@ -1,0 +1,253 @@
+[33mcommit 2b4885b1ef53d2a9141e17cf7185cbc9c8298f32[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 5f0d102 24fcd19
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Tue Jul 30 12:59:44 2024 +0530
+
+    Merge pull request #11 from keshavEG/main
+    
+    updated content
+
+[33mcommit 24fcd19fe21ccf34319fcac22fd6b28c9e99429d[m
+Merge: 5f0d102 baa32d5
+Author: keshavEG <157101612+keshavEG@users.noreply.github.com>
+Date:   Tue Jul 30 12:57:37 2024 +0530
+
+    Merge pull request #4 from keshavEG/keshav
+    
+    Keshav
+
+[33mcommit baa32d591c9596f9022e011cc1b0ecdd5d6db9b5[m
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Tue Jul 30 12:56:20 2024 +0530
+
+    added all content
+
+[33mcommit e44dc5ffe149611984ec26dd141cb5a1956b8433[m
+Merge: a30c458 5f0d102
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Mon Jul 29 15:07:09 2024 +0530
+
+    conflit resolved
+
+[33mcommit a30c458d8678a3e9c620782b6c2cbeda0c7eb264[m
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Mon Jul 29 15:04:23 2024 +0530
+
+    added content and Images
+
+[33mcommit 5f0d102003b0def9c2f0843fe6c8c019ea6530b4[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Fri Jul 26 13:37:07 2024 +0530
+
+    Improved Tabs In platform
+
+[33mcommit 690ba10a85524570aa689c8db2f2f49fe160ea02[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 25 19:03:35 2024 +0530
+
+    Improved Research Report Page
+
+[33mcommit 4be6931408d3f8f8b04ee8d4e95b7ae0a2928b99[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 25 13:06:58 2024 +0530
+
+    Improved UI
+
+[33mcommit acf56af21dd25436d80af5fc29f0b37632e402f8[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Wed Jul 24 18:35:03 2024 +0530
+
+    Added Content Data
+
+[33mcommit e31759eb56ba0a82a6ab5e59500d1633d74b6f4b[m
+Merge: 8bc8620 ca96e5d
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Wed Jul 24 14:45:07 2024 +0530
+
+    Merge branch 'main' of https://github.com/PulkitUjjainwal/MI_Next_Pages
+
+[33mcommit 8bc862061a4ed7f90799b50e9ece85555193e568[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Wed Jul 24 14:45:03 2024 +0530
+
+    Created 3rd Design for Solutions
+
+[33mcommit ca96e5d5019ba4c3c716517200421bfccd2bf2f1[m
+Merge: 997018a 0fc4d37
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Wed Jul 24 13:00:13 2024 +0530
+
+    Merge pull request #10 from keshavEG/main
+    
+    final changes
+
+[33mcommit 0fc4d376f50e23bc65b913a51c961ec2029fb2e2[m
+Merge: d261c35 eb9d570
+Author: keshavEG <157101612+keshavEG@users.noreply.github.com>
+Date:   Wed Jul 24 12:58:58 2024 +0530
+
+    Merge pull request #3 from keshavEG/keshav
+    
+    changes in locak.json file
+
+[33mcommit eb9d570da3213bad73dada44e9c2de467e6b166e[m
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Wed Jul 24 12:54:31 2024 +0530
+
+    changes in locak.json file
+
+[33mcommit d261c35d98034455ea376f8f875a4efc0cc78235[m
+Merge: 0f080a6 e997c0b
+Author: keshavEG <157101612+keshavEG@users.noreply.github.com>
+Date:   Wed Jul 24 12:44:40 2024 +0530
+
+    Merge pull request #2 from keshavEG/keshav
+    
+    change in index page
+
+[33mcommit e997c0b9ae477432944c6faf4a96558a1d796d74[m
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Wed Jul 24 12:41:40 2024 +0530
+
+    change in index page
+
+[33mcommit 997018ac047ca98820678a2c3261c3a5857fc0ad[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Wed Jul 24 12:39:47 2024 +0530
+
+    Added Animations
+
+[33mcommit 54ee81470ca32c7095e53fad717742a3171e7e4f[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Mon Jul 22 18:50:50 2024 +0530
+
+    added textile chemical seafood pages
+
+[33mcommit 0f080a6789cc761d8c7c74cd2f449e6377bb8610[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Mon Jul 22 14:42:55 2024 +0530
+
+    Changed Img to Image
+
+[33mcommit 5fc13f686835e8de14d164a1349ae19ee8b56af3[m
+Merge: d2b07e2 587ba00
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Mon Jul 22 14:41:17 2024 +0530
+
+    Merge pull request #5 from keshavEG/keshav
+    
+    Changes in index page and navbar
+
+[33mcommit 587ba00bd6b9703dd44bdc99f523570e9031adee[m
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Mon Jul 22 14:39:44 2024 +0530
+
+    Changes in index page and navbar
+
+[33mcommit d2b07e2ad0a7eedcafb4a93089e9015e5c00ce7e[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Fri Jul 19 14:57:04 2024 +0530
+
+    Updated Product Platform
+
+[33mcommit 203aa378758c0b7d0763e010b03e30aa3d9eb5bf[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Fri Jul 19 12:10:23 2024 +0530
+
+    Img to Image
+
+[33mcommit ff9010ca736770fa52937a18577112b0e74a5390[m
+Merge: 4372c32 18ea823
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 18 18:01:44 2024 +0530
+
+    Merge pull request #4 from keshavEG/main
+    
+    changes from keshav
+
+[33mcommit 18ea82376cd5e2d48d4e5ee55e32f59c1d7aebd2[m
+Merge: 4372c32 2c119ad
+Author: keshavEG <157101612+keshavEG@users.noreply.github.com>
+Date:   Thu Jul 18 17:59:49 2024 +0530
+
+    Merge pull request #1 from keshavEG/keshav
+    
+    updated from keshav
+
+[33mcommit 2c119ad5b8cb1a510152a2eba13376b55ae46383[m
+Author: keshavEG <keshav.rct@exportgenius.in>
+Date:   Thu Jul 18 17:51:25 2024 +0530
+
+    updated from keshav
+
+[33mcommit 4372c328d62eae19e1dd65212d3618c87a8a2571[m
+Merge: 61ce822 cd85fa5
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 18 17:30:09 2024 +0530
+
+    Merge pull request #2 from PulkitUjjainwal/keshav
+    
+    Merge pull request #1 from PulkitUjjainwal/main
+
+[33mcommit cd85fa5bd6574968714a741d5910937c5d466bac[m
+Merge: 18dd6b3 61ce822
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 18 17:29:45 2024 +0530
+
+    Merge pull request #1 from PulkitUjjainwal/main
+    
+    Added Read_More for Solutions
+
+[33mcommit 61ce822f6499566b35dd76ea6e90ec93e736bf2f[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 18 17:27:23 2024 +0530
+
+    Added Read_More for Solutions
+
+[33mcommit 18dd6b314891822edcc02ddf111e293ddb80603c[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 18 12:08:45 2024 +0530
+
+    Added Page Switching for Solutions
+
+[33mcommit b2d803c6684cc06b6503092b2068e0646c9809a6[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Wed Jul 17 18:55:28 2024 +0530
+
+    Added Solution Alternate
+
+[33mcommit a73a65efcc1f8732667af0ec99988901dd9f61dc[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Tue Jul 16 18:27:57 2024 +0530
+
+    Created Dynamic Components and Rendering
+
+[33mcommit 0c004cd8cd73dcad5350907dd666ecced977977f[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Sat Jul 13 19:13:35 2024 +0530
+
+    Added data, contactus and plans pages
+
+[33mcommit 960e9fad03807a3dd114daa43a4793451aaf10d6[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Fri Jul 12 12:59:03 2024 +0530
+
+    Product Platform Page Completed
+
+[33mcommit 0202a3d797bf7d94254691a01e2094b857d71b8f[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 11 18:50:07 2024 +0530
+
+    Update Product Platform page
+
+[33mcommit 3ad5dadc315530e2e2d509f18a137ad1039ad8f3[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 11 16:55:53 2024 +0530
+
+    Merge 1
+
+[33mcommit 6d01cf46cc05b6e6729df4bf23d26b474c885160[m
+Author: Pulkit Ujjainwal <77476880+PulkitUjjainwal@users.noreply.github.com>
+Date:   Thu Jul 11 12:15:49 2024 +0530
+
+    Added it-consul
