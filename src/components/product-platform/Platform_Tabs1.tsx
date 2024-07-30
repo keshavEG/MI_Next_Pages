@@ -6,6 +6,7 @@ import { Tab } from '@headlessui/react'
 import UseEmblaCarousel from 'embla-carousel-react'
 import Autoplay from "embla-carousel-autoplay"
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function PlatformTabs() {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -26,7 +27,6 @@ export default function PlatformTabs() {
     emblaApi.on('select', onSelect)
     emblaApi.on('reInit', onSelect)
   }, [emblaApi, onSelect])
-
 
   const tabs = [
     {
@@ -74,6 +74,17 @@ export default function PlatformTabs() {
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
+
+  const tabVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
+  }
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } }
+  }
 
   return (
     <div className="py-10 bg-gray-50">
@@ -136,39 +147,63 @@ export default function PlatformTabs() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-16">
           <Tab.Panels>
-            <div className="relative" ref={tabsRef}>
-              {tabs.map((tab, index) => (
-                <Tab.Panel
-                  key={index}
-                  className={`transition-all duration-300 ease-in-out ${
-                    selectedIndex === index ? 'opacity-100 visible' : 'opacity-0 invisible absolute top-0 left-0 right-0'
-                  }`}
-                >
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 mb-8 md:mb-16">
-                    <div className="w-full md:w-5/12">
-                      <h2 className="text-2xl md:text-4xl font-bold text-black uppercase leading-tight mb-4 md:mb-6">
-                        {tab.content}
-                      </h2>
-                      <p className="text-sm md:text-base text-neutral-500 mb-6 md:mb-8">
-                        {tab.excerpt}
-                      </p>
-                      <button className="px-4 py-2 md:px-6 md:py-3 bg-orange-400 text-white text-xs md:text-sm font-semibold uppercase rounded-md hover:bg-orange-500 transition-colors">
-                        Schedule A Demo
-                      </button>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedIndex}
+                variants={tabVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="relative"
+                ref={tabsRef}
+              >
+                {tabs.map((tab, index) => (
+                  <Tab.Panel
+                    key={index}
+                    className={`transition-all duration-300 ease-in-out ${
+                      selectedIndex === index ? 'block' : 'hidden'
+                    }`}
+                  >
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 mb-8 md:mb-16">
+                      <motion.div 
+                        className="w-full md:w-5/12"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <h2 className="text-2xl md:text-4xl font-bold text-black uppercase leading-tight mb-4 md:mb-6">
+                          {tab.content}
+                        </h2>
+                        <p className="text-sm md:text-base text-neutral-500 mb-6 md:mb-8">
+                          {tab.excerpt}
+                        </p>
+                        <motion.button 
+                          className="px-4 py-2 md:px-6 md:py-3 bg-orange-400 text-white text-xs md:text-sm font-semibold uppercase rounded-md hover:bg-orange-500 transition-colors"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          Schedule A Demo
+                        </motion.button>
+                      </motion.div>
+                      <motion.div 
+                        className="w-full md:w-7/12 mt-6 md:mt-0"
+                        variants={imageVariants}
+                        initial="hidden"
+                        animate="visible"
+                      >
+                        <Image
+                          src={tab.img}
+                          alt={tab.title}
+                          width={400}
+                          height={367}
+                          className="w-full h-auto rounded-lg shadow-xl max-w-md mx-auto"
+                        />
+                      </motion.div>
                     </div>
-                    <div className="w-full md:w-7/12 mt-6 md:mt-0">
-                      <Image
-                        src={tab.img}
-                        alt={tab.title}
-                        width={400}
-                        height={367}
-                        className="w-full h-auto rounded-lg shadow-xl max-w-md mx-auto"
-                      />
-                    </div>
-                  </div>
-                </Tab.Panel>
-              ))}
-            </div>
+                  </Tab.Panel>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </Tab.Panels>
         </div>
       </Tab.Group>

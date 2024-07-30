@@ -27,7 +27,7 @@ const PlanCards = () => {
                                 <p className='country-para'>Thailand, Indonesia, Turkey, Singapore, Bangladesh, India, Russia, Pakistan, Philippines, Sri Lanka, Vietnam, Kazakhstan, Ukraine, Uzbekistan</p>
                             </div>
                             <div className='sub-headings'>
-                                <h4 className='sub-heading-para'><span style={{ color: '#FB923C', fontWeight: '700' }}>05</span> Exclusive Countries Covered</h4>
+                                <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>05</span> Exclusive Countries Covered</h4>
                                 <h4 className='sub-heading-para'>Additional Data Types Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>45</span> Countries Mirror Customs Data Covered</h4>
                                 <h4 className='sub-heading-para'><span style={{ color: '#fb923c', fontWeight: '700' }}>36</span> Countries Suez Canal Bill of Lading Data Covered</h4>

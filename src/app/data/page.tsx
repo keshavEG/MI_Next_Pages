@@ -3,6 +3,7 @@ import Integrations_Tabs_Data from "@/components/data/Integrations_Tabs_Data";
 import Maximize_Potential from "@/components/data/Maximize_Potential";
 import { BusinessInsights } from "@/components/shared/bussinessImsights/BusinessInsights";
 import Slider from "@/components/shared/slider";
+import "./data.css"
 
 export default function Data(){
     return(
@@ -12,14 +13,14 @@ export default function Data(){
             <Globe_Data /> 
 
 
-            <Slider />
+            <div style={{ marginTop: '80px'}}><Slider /></div>
 
 
-            <Maximize_Potential />
 
             <br></br>
 
             <Integrations_Tabs_Data />
+            <Maximize_Potential />
 
             <BusinessInsights backgroundImageSrc={''} />
         </div>

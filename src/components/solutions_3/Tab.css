@@ -1,0 +1,23 @@
+.tab-main-div {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tab-right {
+    float: right;
+}
+
+@media (max-width: 600px) {
+    .slider-usecase-div {
+        display: flex;
+        flex-direction: column;
+    }
+    .slider-usecase-heading {
+        font-size: 28px;
+    }
+    .slider-usecase-btn {
+        margin-block: 40px;
+    }
+}
