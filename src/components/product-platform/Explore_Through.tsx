@@ -5,11 +5,11 @@ import '@dotlottie/react-player/dist/index.css';
 
 export default function ExploreThroughWideDatabase() {
   return (
-    <div className="relative  bg-white overflow-hidden">
+    <div className="relative bg-white overflow-hidden">
       {/* Background shapes */}
       <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-gray-100 rounded-bl-[100%] z-0"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-50 rounded-tr-[100%] z-0"></div>
-      
+
       {/* Main content */}
       <div className="relative w-full max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-center justify-between z-10">
         {/* Left column */}
@@ -31,9 +31,9 @@ export default function ExploreThroughWideDatabase() {
             FREE TRIAL
           </button>
         </div>
-        
+
         {/* Right column */}
-        <div style={{ zIndex: "-1"}} className="w-full lg:w-1/2 flex justify-center items-center">
+        <div className="w-full lg:w-1/2 flex justify-center items-center">
           <DotLottiePlayer
             src="https://lottie.host/e05a8a1d-fa02-435e-af0a-0edcc0636f65/msaawEkbUo.json"
             autoplay

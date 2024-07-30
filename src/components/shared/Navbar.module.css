@@ -29,6 +29,9 @@
     font-size: var(--font-size-21xl);
     color: var(--color-black);
   }
+  .navbarr-div {
+    z-index: 999 !important;
+  }
   .m {
     text-transform: uppercase;
   }
@@ -115,6 +118,9 @@
     gap: var(--gap-53xl);
     line-height: normal;
     letter-spacing: normal;
+  }
+  .dropdown-div {
+    z-index: 999;
   }
   
   @media screen and (max-width: 1350px) {
