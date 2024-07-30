@@ -222,7 +222,8 @@ export default function Navbar() {
             Login
           </button>
           <button className="py-2 px-4 bg-orange-500 text-white text-sm uppercase font-bold rounded hover:bg-orange-600 transition-colors">
-            Let's Talk
+            {/* Let's Talk */}
+            <a style={{ textDecoration: "none", color: 'white'}} href="/contactus">Let's Talk</a>
           </button>
         </div>
       </div>
@@ -276,7 +277,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      )}
+      )} 
     </nav>
   );
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import "./solution_2.css";
 
 export default function Video_Alt({ data }) {
   return (
-    <div className="flex flex-col items-center justify-center py-10">
+    <div className="solution-three-div flex flex-col items-center justify-center">
       <div className="flex gap-5 max-md:flex-col max-md:gap-0 w-full max-w-full">
         <div className="flex flex-col w-6/12 max-md:w-full">
           <div className="flex flex-col self-stretch px-5 my-auto max-md:mt-10 max-md:max-w-full">

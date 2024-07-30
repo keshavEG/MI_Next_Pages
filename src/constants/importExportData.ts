@@ -19,13 +19,13 @@ interface Data {
       { text: "190+ Cargo BL Countries", imageSrc: "/arrow.png" }
     ],
     "DETAILED DATA": [
-      { text: "54 Detailed Countries", imageSrc: "/arrow.png" }
+      { text: "60+ Detailed Data", imageSrc: "/arrow.png" }
     ],
     "STATISTICAL DATA": [
-      { text: "33 Statistical Countries", imageSrc: "/arrow.png" }
+      { text: "33+ Statistical Countries", imageSrc: "/arrow.png" }
     ],
     "MIRROR DATA": [
-      { text: "184 Mirror Countries", imageSrc: "/arrow.png" }
+      { text: "195+ Mirror Countries", imageSrc: "/arrow.png" }
     ],
     "BILL OF LADING": [
       { text: "2 Bill of Lading Countries", imageSrc: "/arrow.png" }
@@ -34,10 +34,10 @@ interface Data {
       { text: "109 Suez Canal BL Countries", imageSrc: "/arrow.png" }
     ],
     "TRANSIT DATA": [
-      { text: "190 Transit Countries", imageSrc: "/arrow.png" }
+      { text: "196+ Transit Countries", imageSrc: "/arrow.png" }
     ],
     "CARGO BL DATA": [
-      { text: "190+ Cargo BL Countries", imageSrc: "/arrow.png" }
+      { text: "208+ Cargo BL Countries", imageSrc: "/arrow.png" }
     ]
   };
   

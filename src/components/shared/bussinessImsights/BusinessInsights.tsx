@@ -14,7 +14,7 @@ export const BusinessInsights: React.FC<BusinessInsightsProps> = () => {
 
   // Extract the last part of the url
   const currentPath = pathname.split("/").pop();
-  console.log("This is the router ----> ", pathname)
+  // console.log("This is the router ----> ", pathname)
 
   const { title, subtitle } = headings[pathname] || headings["default"];
 
