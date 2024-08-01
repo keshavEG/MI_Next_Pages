@@ -12,10 +12,10 @@ export default function Data(){
 
             <Globe_Data /> 
 
-            <DataAvailabilityTable />
 
             <Slider />
 
+            <DataAvailabilityTable />
 
             <Maximize_Potential />
 

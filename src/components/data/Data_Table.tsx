@@ -203,7 +203,7 @@ export function DataAvailabilityTable() {
   })
 
   return (
-    <div className="w-full space-y-6 p-6 md:p-8 bg-white rounded-lg shadow-lg">
+    <div className=" space-y-6 p-6 md:p-8 bg-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Data Availability</h2>
       <div className="flex flex-wrap gap-4 items-end">
         <div className="w-full md:w-1/3 lg:w-1/4 relative">
