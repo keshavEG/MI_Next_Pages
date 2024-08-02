@@ -10,6 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { motion, AnimatePresence } from "framer-motion";
+import styles from ""
 
 interface SolutionContent {
   title: string;
@@ -167,23 +168,41 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/data" className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">
-                  Data
-                </Link>
-              </NavigationMenuItem>
+              <NavigationMenuItem className="abc">
+                    <a
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      href="#"
+                      className="navbar-links uppercase text-sm font-semibold transition-colors"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'black'}
+                    >
+                      Data
+                    </a>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/plans" className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">
-                  Plans
-                </Link>
-              </NavigationMenuItem>
+                  <NavigationMenuItem className="abc">
+                    <a
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      href="#"
+                      className="navbar-links uppercase text-sm font-semibold transition-colors"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'black'}
+                    >
+                      Plans
+                    </a>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/research-insights" className="uppercase text-sm font-semibold hover:text-orange-500 transition-colors">
-                  Research & Insights
-                </Link>
-              </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <a
+                      style={{ textDecoration: 'none', color: 'black' }}
+                      href="#"
+                      className="navbar-links uppercase text-sm font-semibold transition-colors"
+                      onMouseEnter={(e) => e.currentTarget.style.color = '#EA580C'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = 'black'}
+                    >
+                      Research & Insights
+                    </a>
+                  </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
