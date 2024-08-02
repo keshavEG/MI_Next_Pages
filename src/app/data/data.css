@@ -1,21 +1,24 @@
-/* .maximize-div {
-    padding-inline: 20px;
-    margin-inline: 250px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.maximize-div {
+  padding-inline: 20px;
+  margin-inline: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.maximize-heading {
+  font-size: 35px;
+  line-height: 1.2;
 }
 
-
-@media (max-width: 600px){
-    .maximize-div {
-        padding-inline: 10px;
-        margin-inline: 0;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-    .maximize-img-div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-} */
+@media (max-width: 600px) {
+  .maximize-div {
+    padding-inline: 10px;
+    margin-inline: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .maximize-img-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

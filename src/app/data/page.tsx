@@ -4,6 +4,7 @@ import Integrations_Tabs_Data from "@/components/data/Integrations_Tabs_Data";
 import Maximize_Potential from "@/components/data/Maximize_Potential";
 import { BusinessInsights } from "@/components/shared/bussinessImsights/BusinessInsights";
 import Slider from "@/components/shared/slider";
+import "./data.css"
 
 export default function Data(){
     return(

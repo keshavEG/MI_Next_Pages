@@ -10,7 +10,6 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from ""
 
 interface SolutionContent {
   title: string;
