@@ -1,6 +1,6 @@
 "use client"
 import * as React from "react"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect } from "react"
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -59,6 +59,7 @@ export function DataAvailabilityTable() {
     direction: "all"
   })
   const [isLoading, setIsLoading] = useState(false)
+  const [pageSize, setPageSize] = useState(10)
 
   const columns: ColumnDef<DataAvailability>[] = [
     {
@@ -68,6 +69,7 @@ export function DataAvailabilityTable() {
           checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
           aria-label="Select all"
+          className="w-3 h-3"
         />
       ),
       cell: ({ row }) => (
@@ -75,6 +77,7 @@ export function DataAvailabilityTable() {
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
           aria-label="Select row"
+          className="w-3 h-3"
         />
       ),
       enableSorting: false,
@@ -83,22 +86,21 @@ export function DataAvailabilityTable() {
     {
       accessorKey: "continent",
       header: "Continent",
-      cell: ({ row }) => <div>{row.getValue("continent")}</div>,
+      cell: ({ row }) => <div className="text-xs">{row.getValue("continent")}</div>,
     },
     {
       accessorKey: "country",
-      header: ({ column }) => {
-        return (
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Country
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        )
-      },
-      cell: ({ row }) => <div>{row.getValue("country")}</div>,
+      header: ({ column }) => (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="p-0 text-xs font-medium"
+        >
+          Country
+          <ArrowUpDown className="ml-1 h-2 w-2" />
+        </Button>
+      ),
+      cell: ({ row }) => <div className="text-xs">{row.getValue("country")}</div>,
     },
     {
       accessorKey: "data_type",
@@ -126,20 +128,21 @@ export function DataAvailabilityTable() {
       cell: ({ row }) => <div>{row.getValue("data_fields")}</div>,
     },
     {
-      id: "actions",
-      enableHiding: false,
-      cell: ({ row }) => {
-        const data = row.original
-        return (
-          <Button
-            variant="ghost"
-            onClick={() => data.file_url && window.open(data.file_url, "_blank")}
-            disabled={!data.file_url}
-          >
-            <Download className="h-4 w-4" />   
-          </Button>
-        )
-      },
+        id: "actions",
+        enableHiding: false,
+        cell: ({ row }) => {
+          const data = row.original
+          return (
+            <Button
+              variant="ghost"
+              onClick={() => data.file_url && window.open(data.file_url, "_blank")}
+              disabled={!data.file_url}
+              className="p-1"
+            >
+              <Download className="h-3 w-3" />   
+            </Button>
+          )
+        },
     },
   ]
 
@@ -174,6 +177,7 @@ export function DataAvailabilityTable() {
     }
   }
 
+ 
   const table = useReactTable({
     data,
     columns,
@@ -198,16 +202,21 @@ export function DataAvailabilityTable() {
       columnVisibility,
       rowSelection,
       globalFilter,
+      pagination: {
+        pageIndex: 0,
+        pageSize: pageSize,
+      },
     },
     onGlobalFilterChange: setGlobalFilter,
+    pageCount: Math.ceil(data.length / pageSize),
   })
 
   return (
-    <div className=" space-y-6 p-6 md:p-8 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Data Availability</h2>
-      <div className="flex flex-wrap gap-4 items-end">
+    <div className="space-y-4 p-4 md:p-6 bg-white rounded-lg shadow-lg">
+      <h2 className="text-xl font-bold text-gray-800 mb-3">Data Availability</h2>
+      <div className="flex flex-wrap gap-3 items-end">
         <div className="w-full md:w-1/3 lg:w-1/4 relative">
-          <label htmlFor="globalSearch" className="text-sm font-medium text-gray-700 mb-1 block">
+          <label htmlFor="globalSearch" className="text-xs font-medium text-gray-700 mb-1 block">
             Global Search
           </label>
           <Input
@@ -215,9 +224,9 @@ export function DataAvailabilityTable() {
             placeholder="Search..."
             value={globalFilter ?? ""}
             onChange={(event) => setGlobalFilter(event.target.value)}
-            className="pl-10 pr-4 py-2 rounded-md border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+            className="pl-8 pr-3 py-1 text-sm rounded-md border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
           />
-          <Search className="absolute left-3 top-[60%] transform -translate-y-1/2 text-gray-400" size={18} />
+          <Search className="absolute left-2 top-[60%] transform -translate-y-1/2 text-gray-400" size={14} />
         </div>
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
           <label htmlFor="continentFilter" className="text-sm font-medium text-gray-700 mb-1 block">
@@ -278,13 +287,37 @@ export function DataAvailabilityTable() {
             </SelectContent>
           </Select>
         </div>
+
+        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
+          <label htmlFor="showRows" className="text-sm font-medium text-gray-700 mb-1 block">
+            Show Rows
+          </label>
+          <Select
+            value={pageSize.toString()}
+            onValueChange={(value) => {
+              setPageSize(Number(value))
+              table.setPageSize(Number(value))
+            }}
+          >
+            <SelectTrigger id="showRows" className="w-full">
+              <SelectValue placeholder="Show Rows" />
+            </SelectTrigger>
+            <SelectContent>
+              {[5, 10, 15, 20, 25].map((size) => (
+                <SelectItem key={size} value={size.toString()}>
+                  {size}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Columns <ChevronDown className="ml-2 h-4 w-4" />
+            <Button variant="outline" className="ml-auto text-sm py-1 px-2">
+              Columns <ChevronDown className="ml-1 h-3 w-3" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="text-sm">
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
@@ -298,16 +331,18 @@ export function DataAvailabilityTable() {
                   {column.id}
                 </DropdownMenuCheckboxItem>
               ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+           </DropdownMenuContent>
+
+           
+           </DropdownMenu>
       </div>
       <div className="rounded-md border overflow-hidden">
         {isLoading ? (
-          <div className="flex justify-center items-center h-64 bg-gray-50">
+          <div className="flex justify-center items-center h-32 bg-gray-50">
             <div className="animate-pulse flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full bg-blue-400 mb-4"></div>
-              <div className="h-4 bg-blue-400 rounded w-3/4"></div>
-              <div className="h-4 bg-blue-400 rounded w-1/2 mt-2"></div>
+              <div className="w-6 h-6 rounded-full bg-blue-400 mb-2"></div>
+              <div className="h-2 bg-blue-400 rounded w-3/4"></div>
+              <div className="h-2 bg-blue-400 rounded w-1/2 mt-1"></div>
             </div>
           </div>
         ) : (
@@ -315,9 +350,9 @@ export function DataAvailabilityTable() {
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (
-                  <TableRow key={headerGroup.id}>
+                  <TableRow key={headerGroup.id} className="bg-gray-100">
                     {headerGroup.headers.map((header) => (
-                      <TableHead key={header.id} className="bg-gray-100">
+                      <TableHead key={header.id} className="py-1 px-2 text-[10px] font-medium text-gray-700">
                         {header.isPlaceholder
                           ? null
                           : flexRender(
@@ -338,7 +373,7 @@ export function DataAvailabilityTable() {
                       className="hover:bg-gray-50"
                     >
                       {row.getVisibleCells().map((cell) => (
-                        <TableCell key={cell.id}>
+                        <TableCell key={cell.id} className="py-1 px-2 text-xs">
                           {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </TableCell>
                       ))}
@@ -346,7 +381,7 @@ export function DataAvailabilityTable() {
                   ))
                 ) : (
                   <TableRow>
-                    <TableCell colSpan={columns.length} className="h-24 text-center">
+                    <TableCell colSpan={columns.length} className="h-12 text-center text-xs">
                       No results found.
                     </TableCell>
                   </TableRow>
@@ -356,21 +391,22 @@ export function DataAvailabilityTable() {
           </div>
         )}
       </div>
-      <div className="flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0 py-4">
-        <div className="text-sm text-gray-700">
+      <div className="flex flex-col sm:flex-row items-center justify-between space-y-1 sm:space-y-0 py-2">
+        <div className="text-[10px] text-gray-700">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-1">
           <Button
             variant="outline"
             size="sm"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
+            className="text-[10px] py-0.5 px-1"
           >
             Previous
           </Button>
-          <span className="text-sm text-gray-700">
+          <span className="text-[10px] text-gray-700">
             Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
           </span>
           <Button
@@ -378,6 +414,7 @@ export function DataAvailabilityTable() {
             size="sm"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
+            className="text-[10px] py-0.5 px-1"
           >
             Next
           </Button>
