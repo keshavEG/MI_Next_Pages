@@ -1398,4 +1398,3 @@ const getSolutionsData = () => {
 };
 
 export default getSolutionsData;
-

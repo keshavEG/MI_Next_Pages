@@ -220,8 +220,8 @@ export const headings = {
     subtitle: "Get the global trade data that you need for business potential!"
   },
   "/product-platform": {
-    title: "Unravel the Superpower of Platform.",
-    subtitle: "Head now to book for a live-demo!"
+    title: "blank",
+    subtitle: "blank"
   },
   "/datalicense": {
     title: "Leverage Market Intelligence Platform",

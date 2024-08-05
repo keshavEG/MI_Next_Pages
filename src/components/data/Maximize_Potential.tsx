@@ -6,7 +6,7 @@ export default function Maximize_Potential() {
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-[84%] max-md:ml-0 max-md:w-full">
           <div className="flex flex-col self-stretch px-5 my-auto max-md:mt-10 max-md:max-w-full">
-            <div className="maximize-heading maxtext-4xl font-bold leading-5 text-black uppercase max-md:max-w-full">
+            <div className="text-4xl font-bold leading-5 text-black uppercase max-md:max-w-full">
               Maximise the Potential of Artificial Intelligence
             </div>
             <div className="mt-5 text-base leading-7 text-neutral-500 max-md:max-w-full">

@@ -87,7 +87,7 @@ export default function PlatformTabs() {
   }
 
   return (
-    <div style={{ height: '600px'}} className="py-10 bg-gray-50">
+    <div className="py-10 bg-gray-50">
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <div className="w-full bg-black sticky top-0 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
