@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import "./Navbar.module.css"
 
+
 const solutionsContent = {
   "Sales Enablement": {
     title: "Sales Enablement",
@@ -62,6 +63,7 @@ export default function Navbar() {
   const toggleMobileSubmenu = (submenu: React.SetStateAction<string>) => {
     setMobileSubmenuOpen(mobileSubmenuOpen === submenu ? "" : submenu);
   };
+
 
   return (
     <nav className="w-full bg-white shadow-md">

@@ -8,20 +8,11 @@ import "./data.css"
 export default function Data(){
     return(
         <div>
-            
-
             <Globe_Data /> 
-
-
             <div style={{ marginTop: '80px'}}><Slider /></div>
-
-
-
             <br></br>
-
             <Integrations_Tabs_Data />
             <Maximize_Potential />
-
             <BusinessInsights backgroundImageSrc={''} />
         </div>
     );
