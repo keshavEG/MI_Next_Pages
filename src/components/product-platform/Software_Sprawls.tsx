@@ -4,29 +4,37 @@ import * as React from "react";
 import { useState } from 'react';
 
 const tabs = [
-  { id: 'global-data', label: 'GLOBAL DATA' },
-  { id: 'engage-customers', label: 'ENGAGE CUSTOMERS' },
-  { id: 'win-faster', label: 'WIN FASTER' },
+  { id: 'data-field', label: 'DATA FIELD' },
+  { id: 'industry', label: 'INDUSTRY' },
+  { id: 'use-cases', label: 'USE CASES' },
 ];
 
 const contentCards = {
-  'global-data': [
-    { title: 'ACCOUNT BASED MARKETING', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: '683532162897b39d5ba43c3763adf6cfc8323dcaf59456e37eea8c9f918c8639' },
-    { title: 'CHAT', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: '034a37730f7d3b7a20faed17a117fde1e6dd27ee9dae8b3cff0fdeb9c9a379b0' },
-    { title: 'SALES ENGAGEMENT', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: '27fb15fc39e19b335d8c14df5152ebb4d1aeab3eefb69840461e3063a59ba180' },
+  'data-field': [
+    { title: 'Transit', description: 'Import and Export Insights of 196+ Countries.', icon: 'placeholder_icon_id_3' },
+    { title: 'Detailed', description: 'Discover Global Trade Facts of Top 60 Countries.', icon: 'placeholder_icon_id_4' },
+    { title: 'Suez Canal', description: 'Checkout 113+ Countries\' Data Passing via this Canal.', icon: 'placeholder_icon_id_5' },
+    { title: 'Cargo', description: 'Access Cargo Data From over 200 Countries.', icon: 'placeholder_icon_id_6' },
+    { title: 'Mirror', description: 'Dive Into the Mirror Trade Data of 195 Countries.', icon: 'placeholder_icon_id_7' },
   ],
-  'engage-customers': [
-    { title: 'EMAIL VERIFICATION', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: '5bfe1a649da3cbcf61af5b074120b6e4698bb2994d6f6a4d84dc1691bbd88b58' },
-    { title: 'LEAD CAPTURE', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: '4275d9c9ccaa1f36691f0f49d924733977ff81b8564e04d96a783a1967fa0a29' },
+  'industry': [
+    { title: 'Importer', description: 'Get a Hang of Global Trade Data, Sellers & Suppliers.', icon: 'placeholder_icon_id_8' },
+    { title: 'Exporter', description: 'Dive into Suppliers’s Network Available Worldwide.', icon: 'placeholder_icon_id_9' },
+    { title: 'Logistics', description: 'Optimize Supply Chain & Connect with Potential Customers.', icon: 'placeholder_icon_id_10' },
+    { title: 'Corporate', description: 'Identify Businesses and Spectrum of Buyers & Suppliers.', icon: 'placeholder_icon_id_11' },
+    { title: 'Insurance', description: 'Examine Fraud Detection and Do Market Analysis.', icon: 'placeholder_icon_id_12' },
   ],
-  'win-faster': [
-    { title: 'CUSTOM CARD 1', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: 'placeholder_icon_id_1' },
-    { title: 'CUSTOM CARD 2', description: 'Lorem ipsum dolor sit amet, consectetur.', icon: 'placeholder_icon_id_2' },
+  'use-cases': [
+    { title: 'Market Analysis', description: 'See where the import and export market curve goes.', icon: 'placeholder_icon_id_13' },
+    { title: 'Risk Assessment', description: 'Take Precautionary Measures in Potential Risks.', icon: 'placeholder_icon_id_14' },
+    { title: 'Lead Generation', description: 'Identify Prospective Clients Engaged in Int’l Trade.', icon: 'placeholder_icon_id_15' },
+    { title: 'Competitive Analysis', description: 'Peak into your Competitor’s Trade Activities.', icon: 'placeholder_icon_id_16' },
+    { title: 'Data Enhancement', description: 'Enriched Trade Data Driving Greater Value.', icon: 'placeholder_icon_id_17' },
   ],
 };
 
 export default function SoftwareSprawlComponent() {
-  const [activeTab, setActiveTab] = useState('global-data');
+  const [activeTab, setActiveTab] = useState('data-field');
 
   return (
     <div className="software-div max-w-[931px] py-10">
@@ -53,7 +61,7 @@ export default function SoftwareSprawlComponent() {
         
         {/* Content */}
         <div className="w-full lg:w-3/4 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {contentCards[activeTab].map((card, index) => (
+          {contentCards[activeTab]?.map((card, index) => (
             <div key={index} className="border p-4 flex items-center">
               <img
                 loading="lazy"
