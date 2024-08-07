@@ -9,12 +9,10 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, Download, Search } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
@@ -34,6 +32,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { motion, AnimatePresence } from "framer-motion"
 
 export type DataAvailability = {
   continent: string
@@ -45,6 +44,54 @@ export type DataAvailability = {
   data_fields: string
   file_url: string | null
 }
+
+const LoadingBar = ({ progress }) => (
+  <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+    <motion.div
+      className="h-full bg-blue-500"
+      initial={{ width: 0 }}
+      animate={{ width: `${progress}%` }}
+      transition={{ duration: 0.5 }}
+    />
+  </div>
+)
+
+const LoadingSpinner = () => (
+  <motion.div
+    className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full"
+    animate={{ rotate: 360 }}
+    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+  />
+)
+
+const LoadingPulse = () => (
+  <div className="flex space-x-2">
+    {[0, 1, 2].map((index) => (
+      <motion.div
+        key={index}
+        className="w-3 h-3 bg-blue-500 rounded-full"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [1, 0.5, 1],
+        }}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          delay: index * 0.2,
+        }}
+      />
+    ))}
+  </div>
+)
+
+const Loader = ({ progress }) => (
+  <div className="flex flex-col items-center justify-center w-full h-64 space-y-4">
+    <LoadingSpinner />
+    <LoadingBar progress={progress} />
+    <LoadingPulse />
+    <p className="text-sm text-gray-500">Loading data... {progress}%</p>
+  </div>
+)
 
 export function DataAvailabilityTable() {
   const [data, setData] = useState<DataAvailability[]>([])
@@ -60,6 +107,11 @@ export function DataAvailabilityTable() {
   })
   const [isLoading, setIsLoading] = useState(false)
   const [pageSize, setPageSize] = useState(10)
+  const [pageIndex, setPageIndex] = useState(0)
+  const [totalItems, setTotalItems] = useState(0)
+  const [loadingProgress, setLoadingProgress] = useState(0)
+  
+  
 
   const columns: ColumnDef<DataAvailability>[] = [
     {
@@ -105,55 +157,63 @@ export function DataAvailabilityTable() {
     {
       accessorKey: "data_type",
       header: "Data Type",
-      cell: ({ row }) => <div>{row.getValue("data_type")}</div>,
+      cell: ({ row }) => <div className="text-xs">{row.getValue("data_type")}</div>,
     },
     {
       accessorKey: "direction",
       header: "Direction",
-      cell: ({ row }) => <div>{row.getValue("direction")}</div>,
+      cell: ({ row }) => <div className="text-xs">{row.getValue("direction")}</div>,
     },
     {
       accessorKey: "data_coverage",
-      header: "Data Coverage",
-      cell: ({ row }) => <div>{row.getValue("data_coverage")}</div>,
+      header: "Coverage",
+      cell: ({ row }) => <div className="text-xs">{row.getValue("data_coverage")}</div>,
     },
     {
       accessorKey: "period",
-      header: "Data Availability",
-      cell: ({ row }) => <div>{row.getValue("period")}</div>,
+      header: "Availability",
+      cell: ({ row }) => <div className="text-xs">{row.getValue("period")}</div>,
     },
     {
       accessorKey: "data_fields",
-      header: "Data Fields",
-      cell: ({ row }) => <div>{row.getValue("data_fields")}</div>,
+      header: "Fields",
+      cell: ({ row }) => <div className="text-xs">{row.getValue("data_fields")}</div>,
     },
     {
-        id: "actions",
-        enableHiding: false,
-        cell: ({ row }) => {
-          const data = row.original
-          return (
-            <Button
-              variant="ghost"
-              onClick={() => data.file_url && window.open(data.file_url, "_blank")}
-              disabled={!data.file_url}
-              className="p-1"
-            >
-              <Download className="h-3 w-3" />   
-            </Button>
-          )
-        },
+      id: "actions",
+      enableHiding: false,
+      cell: ({ row }) => {
+        const data = row.original
+        return (
+          <Button
+            variant="ghost"
+            onClick={() => data.file_url && window.open(data.file_url, "_blank")}
+            disabled={!data.file_url}
+            className="p-1"
+          >
+            <Download className="h-3 w-3" />
+          </Button>
+        )
+      },
     },
   ]
 
   useEffect(() => {
     fetchData()
-  }, [filters])
-
+  }, [filters, pageIndex, pageSize])
 
   const fetchData = async () => {
     setIsLoading(true)
+    setLoadingProgress(0)
     try {
+      // Simulating a loading progress
+      const progressInterval = setInterval(() => {
+        setLoadingProgress((prev) => {
+          const newProgress = prev + Math.random() * 20
+          return newProgress > 90 ? 90 : newProgress
+        })
+      }, 500)
+
       const response = await fetch('/api/data-availability', {
         method: 'POST',
         headers: {
@@ -163,28 +223,33 @@ export function DataAvailabilityTable() {
           data_type: filters.data_type === "all" ? undefined : filters.data_type.toLowerCase(),
           continent: filters.continent === "all" ? undefined : filters.continent.toLowerCase(),
           direction: filters.direction === "all" ? undefined : filters.direction.toLowerCase(),
+          pageIndex,
+          pageSize
         }),
       })
+      clearInterval(progressInterval)
+      setLoadingProgress(100)
+
       if (!response.ok) {
         throw new Error('Failed to fetch data')
       }
       const result = await response.json()
-      setData(result)
+      setData(result.data)
+      setTotalItems(result.total)
     } catch (error) {
       console.error('Error fetching data:', error)
     } finally {
-      setIsLoading(false)
+      setTimeout(() => setIsLoading(false), 500) // Delay to show 100% progress
     }
   }
 
- 
+
   const table = useReactTable({
     data,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
@@ -203,223 +268,154 @@ export function DataAvailabilityTable() {
       rowSelection,
       globalFilter,
       pagination: {
-        pageIndex: 0,
-        pageSize: pageSize,
+        pageIndex,
+        pageSize
       },
     },
     onGlobalFilterChange: setGlobalFilter,
-    pageCount: Math.ceil(data.length / pageSize),
+    manualPagination: true, // Manual pagination
+    pageCount: Math.ceil(totalItems / pageSize), // Update based on total items from server
   })
 
   return (
-    <div className="space-y-4 p-4 md:p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-xl font-bold text-gray-800 mb-3">Data Availability</h2>
-      <div className="flex flex-wrap gap-3 items-end">
-        <div className="w-full md:w-1/3 lg:w-1/4 relative">
-          <label htmlFor="globalSearch" className="text-xs font-medium text-gray-700 mb-1 block">
-            Global Search
-          </label>
-          <Input
-            id="globalSearch"
-            placeholder="Search..."
-            value={globalFilter ?? ""}
-            onChange={(event) => setGlobalFilter(event.target.value)}
-            className="pl-8 pr-3 py-1 text-sm rounded-md border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-          />
-          <Search className="absolute left-2 top-[60%] transform -translate-y-1/2 text-gray-400" size={14} />
+    <div className="space-y-4 p-2 sm:p-4 md:p-6 bg-white rounded-lg shadow-lg">
+      <h2 style={{textAlign:"center"}} className="text-lg sm:text-xl font-bold text-gray-800 mb-3">Data Availability</h2>
+      <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 items-start sm:items-end">
+        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
+          <Select onValueChange={(value) => setFilters({ ...filters, data_type: value })}>
+            <SelectTrigger className="w-full text-xs">
+              <SelectValue placeholder="Data Type" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All Data Types</SelectItem>
+              <SelectItem value="mirror">Mirror</SelectItem>
+              <SelectItem value="detailed">Detailed</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
-          <label htmlFor="continentFilter" className="text-sm font-medium text-gray-700 mb-1 block">
-            Continent
-          </label>
-          <Select
-            value={filters.continent}
-            onValueChange={(value) => setFilters(prev => ({ ...prev, continent: value }))}
-          >
-            <SelectTrigger id="continentFilter" className="w-full">
-              <SelectValue placeholder="Select Continent" />
+          <Select onValueChange={(value) => setFilters({ ...filters, continent: value })}>
+            <SelectTrigger className="w-full text-xs">
+              <SelectValue placeholder="Continent" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Continents</SelectItem>
-              <SelectItem value="Asia">Asia</SelectItem>
-              <SelectItem value="Europe">Europe</SelectItem>
-              <SelectItem value="Africa">Africa</SelectItem>
-              <SelectItem value="North America">North America</SelectItem>
-              <SelectItem value="South America">South America</SelectItem>
-              <SelectItem value="Australia">Australia</SelectItem>
-              <SelectItem value="Antarctica">Antarctica</SelectItem>
+              <SelectItem value="africa">Africa</SelectItem>
+              <SelectItem value="asia">Asia</SelectItem>
+              <SelectItem value="europe">Europe</SelectItem>
+              <SelectItem value="north america">North America</SelectItem>
+              <SelectItem value="south america">South America</SelectItem>
+              <SelectItem value="oceania">Oceania</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
-          <label htmlFor="dataTypeFilter" className="text-sm font-medium text-gray-700 mb-1 block">
-            Data Type
-          </label>
-          <Select
-            value={filters.data_type}
-            onValueChange={(value) => setFilters(prev => ({ ...prev, data_type: value }))}
-          >
-            <SelectTrigger id="dataTypeFilter" className="w-full">
-              <SelectValue placeholder="Select Data Type" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">All Types</SelectItem>
-              <SelectItem value="Detailed">Detailed</SelectItem>
-              <SelectItem value="Summary">Summary</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
-          <label htmlFor="directionFilter" className="text-sm font-medium text-gray-700 mb-1 block">
-            Direction
-          </label>
-          <Select
-            value={filters.direction}
-            onValueChange={(value) => setFilters(prev => ({ ...prev, direction: value }))}
-          >
-            <SelectTrigger id="directionFilter" className="w-full">
-              <SelectValue placeholder="Select Direction" />
+          <Select onValueChange={(value) => setFilters({ ...filters, direction: value })}>
+            <SelectTrigger className="w-full text-xs">
+              <SelectValue placeholder="Direction" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Directions</SelectItem>
-              <SelectItem value="Export">Export</SelectItem>
-              <SelectItem value="Import">Import</SelectItem>
+              <SelectItem value="export">Export</SelectItem>
+              <SelectItem value="import">Import</SelectItem>
             </SelectContent>
           </Select>
         </div>
-
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5">
-          <label htmlFor="showRows" className="text-sm font-medium text-gray-700 mb-1 block">
-            Show Rows
-          </label>
-          <Select
-            value={pageSize.toString()}
-            onValueChange={(value) => {
-              setPageSize(Number(value))
-              table.setPageSize(Number(value))
-            }}
-          >
-            <SelectTrigger id="showRows" className="w-full">
-              <SelectValue placeholder="Show Rows" />
-            </SelectTrigger>
-            <SelectContent>
-              {[5, 10, 15, 20, 25].map((size) => (
-                <SelectItem key={size} value={size.toString()}>
-                  {size}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <Input
+            placeholder="Search..."
+            value={globalFilter}
+            onChange={(e) => setGlobalFilter(e.target.value)}
+            className="w-full text-xs"
+          />
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto text-sm py-1 px-2">
-              Columns <ChevronDown className="ml-1 h-3 w-3" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="text-sm">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => (
-                <DropdownMenuCheckboxItem
-                  key={column.id}
-                  className="capitalize"
-                  checked={column.getIsVisible()}
-                  onCheckedChange={(value) => column.toggleVisibility(!!value)}
-                >
-                  {column.id}
-                </DropdownMenuCheckboxItem>
-              ))}
-           </DropdownMenuContent>
-
-           
-           </DropdownMenu>
       </div>
-      <div className="rounded-md border overflow-hidden">
-        {isLoading ? (
-          <div className="flex justify-center items-center h-32 bg-gray-50">
-            <div className="animate-pulse flex flex-col items-center">
-              <div className="w-6 h-6 rounded-full bg-blue-400 mb-2"></div>
-              <div className="h-2 bg-blue-400 rounded w-3/4"></div>
-              <div className="h-2 bg-blue-400 rounded w-1/2 mt-1"></div>
-            </div>
-          </div>
-        ) : (
-          <div className="overflow-x-auto">
+      <div className="relative overflow-x-auto">
+        <div className="inline-block min-w-full align-middle">
+          <div className="overflow-hidden border rounded-lg shadow-sm">
             <Table>
               <TableHeader>
                 {table.getHeaderGroups().map((headerGroup) => (
-                  <TableRow key={headerGroup.id} className="bg-gray-100">
+                  <TableRow key={headerGroup.id}>
                     {headerGroup.headers.map((header) => (
-                      <TableHead key={header.id} className="py-1 px-2 text-[10px] font-medium text-gray-700">
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext()
-                            )}
+                      <TableHead key={header.id} className="px-1 py-2 text-xs bg-gray-50">
+                        {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                       </TableHead>
                     ))}
                   </TableRow>
                 ))}
               </TableHeader>
               <TableBody>
-                {table.getRowModel().rows?.length ? (
+                {isLoading ? (
+                  <TableRow>
+                    <TableCell colSpan={columns.length} className="p-0">
+                      <Loader />
+                    </TableCell>
+                  </TableRow>
+                ) : data.length === 0 ? (
+                  <TableRow>
+                    <TableCell colSpan={columns.length} className="h-24 text-center text-gray-500">
+                      No results found.
+                    </TableCell>
+                  </TableRow>
+                ) : (
                   table.getRowModel().rows.map((row) => (
-                    <TableRow
-                      key={row.id}
+                    <TableRow 
+                      key={row.id} 
                       data-state={row.getIsSelected() && "selected"}
-                      className="hover:bg-gray-50"
+                      className="hover:bg-gray-50 transition-colors duration-150 ease-in-out"
                     >
                       {row.getVisibleCells().map((cell) => (
-                        <TableCell key={cell.id} className="py-1 px-2 text-xs">
+                        <TableCell key={cell.id} className="px-1 py-2 text-xs">
                           {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </TableCell>
                       ))}
                     </TableRow>
                   ))
-                ) : (
-                  <TableRow>
-                    <TableCell colSpan={columns.length} className="h-12 text-center text-xs">
-                      No results found.
-                    </TableCell>
-                  </TableRow>
                 )}
               </TableBody>
             </Table>
           </div>
-        )}
-      </div>
-      <div className="flex flex-col sm:flex-row items-center justify-between space-y-1 sm:space-y-0 py-2">
-        <div className="text-[10px] text-gray-700">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="flex items-center space-x-1">
+      </div>
+      <div className="flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0 sm:space-x-2 text-xs mt-2">
+        <div className="flex items-center space-x-2">
+          <span>Rows per page:</span>
+          <Select value={pageSize.toString()} onValueChange={(value) => setPageSize(Number(value))}>
+            <SelectTrigger className="w-16">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {[10, 20, 50, 100].map((size) => (
+                <SelectItem key={size} value={size.toString()}>{size}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="flex items-center space-x-2">
           <Button
             variant="outline"
             size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-            className="text-[10px] py-0.5 px-1"
+            disabled={pageIndex === 0}
+            onClick={() => setPageIndex((prev) => Math.max(prev - 1, 0))}
+            className="text-xs"
           >
             Previous
           </Button>
-          <span className="text-[10px] text-gray-700">
-            Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
+          <span className="text-sm text-gray-600">
+            Page {pageIndex + 1} of {Math.ceil(totalItems / pageSize)}
           </span>
           <Button
             variant="outline"
             size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-            className="text-[10px] py-0.5 px-1"
+            disabled={(pageIndex + 1) * pageSize >= totalItems}
+            onClick={() => setPageIndex((prev) => prev + 1)}
+            className="text-xs"
           >
             Next
           </Button>
         </div>
-      </div>    
+      </div>
     </div>
   )
 }

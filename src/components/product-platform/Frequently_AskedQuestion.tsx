@@ -55,7 +55,7 @@ export default function Frequent_Questions() {
                         </div>
                     </AccordionTrigger>
                     <AccordionContent className="pt-3.5 pb-16 mt-9 w-full text-base leading-7 rounded-xl text-neutral-500 text-center max-md:max-w-full text-left">
-                    Our dashboard offers detailed country information of 195+ countries having historical data since 2010 which is periodically updated. It includes 7 comprehensive data fields such as Transit, Suez Canal, Mirror, Statistical, Cargo, Exclusive, Detailed etc.
+                            Our dashboard offers detailed country information of 195+ countries having historical data since 2010 which is periodically updated. It includes 7 comprehensive data fields such as Transit, Suez Canal, Mirror, Statistical, Cargo, Exclusive, Detailed etc.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
