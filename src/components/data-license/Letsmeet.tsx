@@ -14,7 +14,7 @@ import {
   } from "@/components/ui/carousel";
 
 const DemoTab = ({ iframe }) => (
-    <div className="w-full h-[calc(75vh-80px)] min-h-[400px]">
+    <div className="w-full h-[calc(85vh-80px)] min-h-[400px]">
         <iframe src={iframe} title="Demo Scheduler" className="w-full h-full border-0"></iframe>
     </div>
 );

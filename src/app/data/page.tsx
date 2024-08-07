@@ -6,15 +6,18 @@ import { BusinessInsights } from "@/components/shared/bussinessImsights/Business
 import Slider from "@/components/shared/slider";
 import "./data.css"
 
-export default function Data(){
-    return(
+export default function Data() {
+    return (
         <div>
-            
-
-            <Globe_Data /> 
 
 
-            <Slider />
+            <Globe_Data />
+
+
+            <div style={{ marginBlock: '60px' }}>
+
+                <Slider />
+            </div>
 
             <DataAvailabilityTable />
 

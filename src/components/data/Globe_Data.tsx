@@ -8,7 +8,7 @@ export default function Globe_Data() {
   return (
     <div className="relative bg-white overflow-hidden">
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 min-h-screen flex flex-col justify-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 min-h-[50px] flex flex-col justify-center">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div 
             className="md:w-1/2 mb-12 md:mb-0 text-left"
